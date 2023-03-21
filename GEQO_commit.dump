@@ -1,0 +1,1672 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.7 (Ubuntu 14.7-0ubuntu0.22.10.1)
+-- Dumped by pg_dump version 14.7 (Ubuntu 14.7-0ubuntu0.22.10.1)
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: commit_info; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.commit_info (
+    commit text,
+    version numeric(3,1),
+    description text
+);
+
+
+--
+-- Name: gitlog_geqo_all; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.gitlog_geqo_all (
+    file text,
+    commit text,
+    author text,
+    date text,
+    year integer
+);
+
+
+--
+-- Name: gitlog_geqo_copy; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.gitlog_geqo_copy (
+    commit text,
+    author text,
+    date text,
+    year integer
+);
+
+
+--
+-- Name: gitlog_geqo_cx; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.gitlog_geqo_cx (
+    commit text,
+    author text,
+    date text,
+    year integer
+);
+
+
+--
+-- Name: gitlog_geqo_erx; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.gitlog_geqo_erx (
+    commit text,
+    author text,
+    date text,
+    year integer
+);
+
+
+--
+-- Name: gitlog_geqo_eval; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.gitlog_geqo_eval (
+    commit text,
+    author text,
+    date text,
+    year integer
+);
+
+
+--
+-- Name: gitlog_geqo_main; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.gitlog_geqo_main (
+    commit text,
+    author text,
+    date text,
+    year integer
+);
+
+
+--
+-- Name: gitlog_geqo_misc; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.gitlog_geqo_misc (
+    commit text,
+    author text,
+    date text,
+    year integer
+);
+
+
+--
+-- Name: gitlog_geqo_mutation; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.gitlog_geqo_mutation (
+    commit text,
+    author text,
+    date text,
+    year integer
+);
+
+
+--
+-- Name: gitlog_geqo_ox1; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.gitlog_geqo_ox1 (
+    commit text,
+    author text,
+    date text,
+    year integer
+);
+
+
+--
+-- Name: gitlog_geqo_ox2; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.gitlog_geqo_ox2 (
+    commit text,
+    author text,
+    date text,
+    year integer
+);
+
+
+--
+-- Name: gitlog_geqo_pmx; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.gitlog_geqo_pmx (
+    commit text,
+    author text,
+    date text,
+    year integer
+);
+
+
+--
+-- Name: gitlog_geqo_pool; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.gitlog_geqo_pool (
+    commit text,
+    author text,
+    date text,
+    year integer
+);
+
+
+--
+-- Name: gitlog_geqo_px; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.gitlog_geqo_px (
+    commit text,
+    author text,
+    date text,
+    year integer
+);
+
+
+--
+-- Name: gitlog_geqo_random; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.gitlog_geqo_random (
+    commit text,
+    author text,
+    date text,
+    year integer
+);
+
+
+--
+-- Name: gitlog_geqo_recombination; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.gitlog_geqo_recombination (
+    commit text,
+    author text,
+    date text,
+    year integer
+);
+
+
+--
+-- Name: gitlog_geqo_selection; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.gitlog_geqo_selection (
+    commit text,
+    author text,
+    date text,
+    year integer
+);
+
+
+--
+-- Data for Name: commit_info; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.commit_info (commit, version, description) FROM stdin;
+9f2e211386931f7aee48ffbc2fcaef1632d8329f	9.1	Code cleanup
+2e6b1e63a3f4990594af94afe1b3cef90ae752b5	7.0	Code cleanup
+319dbfa7364721d3343af03a7ce063c2a2c9d385	6.2	PGINDENT
+6724a5078748946b8150700125571b6ea62feca8	6.5	Code cleanup
+59f6a57e59fe8353f9edaa3703516ea67e06672b	6.2	Code cleanup
+4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	7.0	Code cleanup
+1ccd423235a48739d6f7a4d7889705b5f9ecc69b	6.2	PGINDENT
+f5bc74192d2ffb32952a06c62b3458d28ff7f98f	8.5	Add GUC geqo_seed + предсказумое случайное число в начале работы. Andres Freund, with some editorialization by Tom
+a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	7.0	Code cleanup
+29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	6.1	Merge in GEQO Optimizer
+55b113257c883722bef8a4dd145c6a0c3fde687f	8.0	Code cleanup
+c7b8998ebbf310a156aa38022555a24d98fdbfb4	10.0	PGINDENT
+9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	10.0	Code cleanup
+af74855a608da4cd7ef88ceb2241ec1c75537f39	6.4	Code cleanup
+c8e1ba736b2b9e8c98d37a5b77c4ed31baf94147	0.0	Update copyright
+bd61a623ace3f3db8da1c7936416706968ae6ec2	0.0	Update copyright
+97c39498e5ca9208d3de5a443a2282923619bf91	0.0	Update copyright
+e126958c2efdfc2d60b978d1fc7a780ff647e8ad	0.0	Update copyright
+7e04792a1cbd1763edf72474f6b1fbad2cd0ad31	0.0	Update copyright
+1d25779284fe1ba08ecd57e647292a9deb241376	0.0	Update copyright
+9d4649ca49416111aee2c84b7e4441a0b7aa2fac	0.0	Update copyright
+5d950e3b0c75d65dd09f8ca5f76cd429a0aabbdc	0.0	Update copyright
+4baaf863eca5412e07a8441b3b7e7482b7a8b21a	0.0	Update copyright
+27b77ecf9f4d5be211900eda54d8155ada50d696	0.0	Update copyright
+ee943004466418595363d567f18c053bae407792	0.0	Update copyright
+1dc34982511d91ef8a2b71bdcb870f067c1b3da9	8.1	PGINDENT
+0239800893ef4901e3c085e06534934a485d3bf0	0.0	Update copyright
+ca3b37487be333a1d241dab1bbdd17a211a88f43	0.0	Update copyright
+7559d8ebfa11d98728e816f6b655582ce41150f3	0.0	Update copyright
+f3c3deb7d003cad114696b0bf5e01b04bb5b8fd0	0.0	Update copyright
+5c25d60244d3a4b458ba55d4f1e50386edb26507	0.0	Update copyright
+9098ab9e327c2e6b0fece9e550d7d93663c60ff5	0.0	Update copyright
+d84fe82230c593f3dc5d7f427849b99d1efa8a0a	0.0	Update copyright
+2ff501590b323bde14f7e662fd89ad12a4d2f4e0	0.0	Update copyright
+511db38ace2690f19816465baed07cefe535bfec	0.0	Update copyright
+da9a8649d810826daf7868c6be9a4086c835c0ee	0.0	Update copyright
+623bf843d201438db1590906b4c39faf9d2e1c2a	0.0	Update copyright
+f2f5b05655afa80377757a2c335c01b28de24429	0.0	Update copyright
+24d2b2680a8d0e01b30ce8a41c4eb3b47aca5031	15.0	Code cleanup
+29dccf5fe0e98af9ce023299c4fe9776a52fd23d	0.0	Update copyright
+21d304dfedb4f26d0d6587d9ac39b1b5c499bb55	10.0	PGINDENT
+a32450a5855eed4bfd756ef292ee45d3c754665b	6.3	PGINDENT
+6bd323c6b3f65b26273d5efb7ddd0ac04d039546	6.4	Code cleanup
+9322950aa44ef3647ccdd043cffe92cead171587	6.5	Code cleanup
+0cf1b79528aa98fa7e0acfd60371251bd691cf5a	7.0	Code cleanup
+400e2c934457bef4bc3cc9a3e49b6289bd761bc0	8.5	Изменена функциональность gimme_tree
+b6b71b85bc45b49005b5aec87cba2c33fc8baf49	8.0	PGINDENT
+07842084fe3e11041f83563c851236395f481470	6.5	PGINDENT
+3969f2924bead7847adbe1fd736eefaf138af942	8.0	Revise GEQO planner to make use of some heuristic knowledge about SQL. Улучшены эвристики SQL (использование в случае с join) и в IN. Изменены значения по умолчанию: geqo_effort стал влиять как на размер популяции, так и на количество поколений (т.е. стал единой точкой влияния на планы), geqo_threshold увеличен до 12
+45708f5ebcee7df4e684d4fb5ae7b1856dfcefa1	7.4	Code cleanup
+9f76d0d926ffe72e32248b7c79f585c47e643981	7.4	Fix GEQO to work again in CVS tip, by being more careful about memory allocation in best_inner_indexscan(). Переписана функция gimme_tree (для большей ясности)
+e0522505bd13bc5aae993fc50b8f420665d78e96	8.2	Code cleanup
+1a179f36f7c612d3560a72396c559cd876dfab6b	9.5	Fix GEQO to not assume its join order heuristic always works. Откат к коммиту 400e2c934457bef4bc3cc9a3e49b6289bd761bc0, т.к. найдена ошибка
+089003fb462fcce46c02bf47322b429f73c33c50	7.4	PGINDENT
+969685ad443637a24650909357e4e768a88412fc	8.0	Code cleanup
+679d39b9c8fbe8f5613879b11431d8152d85ec54	6.3	Code cleanup
+584f9438caef700f25596618141e29265f9595da	6.4	Code cleanup
+fa1a8d6a97068295fe30ac646aec7493a6305bc2	6.4	PGINDENT
+71fd8d4a4ba7f1b050a026dfcba1fcdde32bb078	6.1	Добавлены две новые техники кроссоверинга (geqo_ox1.c geqo_ox2.c); Установлена стандартная процедура оптимизации geqo_erx.c (Edge Recombination Crossover)
+ba2ea6e0f5f270571e7f661cd2c7645160a9562a	7.1	Fix GEQO optimizer to work correctly with new outer-join-capable query representation. Изменено поведение GUC GEQO_RELS (точнее - теперь это кол-во таблиц верхнего уровня в запросе)
+ee6d3a73263c8b8d793ec8fb2f0d6ba2c4ba88e6	6.1	Code cleanup
+0d9fc5afd6eda651d2ef0a4776e08f02d32a96de	6.3	Code cleanup
+4af43ee3f165c8e4b332a7e680a44f4b7ba2d3c1	9.2	Code cleanup
+b81844b1738c584d92330a5ccd0fbd8b603d2886	7.2	PGINDENT
+1332c1e14404407c9a106bf7096e8f58b16dc566	6.5	Change GEQO optimizer to release memory after each gene
+bdfbfde1b168b3332c4cdac34ac86a80aaf4d442	7.4	IN clauses appearing at top level of WHERE can now be handled as joins (Code cleanup?)
+9ab4d98168407c3436d3f0e02d32720b0d9075a0	8.1	Remove planner's private fields from Query struct, and put them into a new PlannerInfo struct (Code cleanup?)
+fcff1cdf4eadbc6dcba4b9a2cd09f38f466ffa31	6.5	PGINDENT
+14aec03502302eff6c67981d8fd121175c436ce9	13.0	Code cleanup
+38dd3ae7d032eecc6ddadcbd402d90f6ac38f6a3	7.3	Code cleanup
+9e1552607a9dc6bc23e43d46770a9063ade4f3f0	7.1	PGINDENT
+e3a33a9a9f1a6afb80c9b83c1456c1a36fbcb70b	8.1	Добавлено использование хеш-таблицы в find_join_rel при большок кол-ве ссылок (ускорение работы)
+e6381966c1886badbc19c94ac1f1ffbc104125ab	7.0	Code cleanup
+a033daf5663944872080f1f52deb2ffcb40f4042	7.3	Code cleanup
+9af4159fce6654aa0e081b00d02bca40b978745c	9.3	PGINDENT
+d8733ce674f62f0e13cfc97d0340b43e1906f458	7.0	Repair planning bugs caused by my misguided removal of restrictinfo link fields in JoinPaths --- turns out that we do need that after all (Code cleanup?)
+65e806cba1f0f154d51caa7478e7192ce58d1056	9.0	PGINDENT
+9dbb0efb0be24c43012546cf5756866fc606af4b	6.5	Code cleanup
+3804539e48e794781c6145c7f988f5d507418fa8	15.0	Code cleanup
+436a2956d80db29ac1dff640b631620d856b4f70	8.1	PGINDENT
+8d9237d48510464dc03e8b00e7203927dc07c4d4	6.5	Code cleanup
+1aebc3618a0be13451918581ad390ad9a3518702	7.1	Code cleanup
+166b5c1def56a8c43536ac64bd0ba92517f67765	7.0	Code cleanup
+2d32d909b559d7cc13cbcd09967c84277d9eeced	6.4	Code cleanup
+e78662d879dec9f5630637119333e99121ee03d3	6.5	Code cleanup
+b1577a7c78d2d8880b3c0f94689fb75bd074c897	7.0	New cost model for planning, incorporating a penalty for random page accesses versus sequential accesses (Code cleanup?)
+a47b38c9ee4960556b0edb76a42171bd281cc1cf	10.0	Code cleanup
+857abb0e57baca9da39e338e75b92fef3ed812c5	7.2	Code cleanup
+ea5b5357cdc79c7742c035032f5500e4a97a6d55	6.2	Code cleanup
+c245776906b065fcd59831a25c3b24ad3ddcd849	13.0	Code cleanup
+f14aad5169baa5e2ac25d49f1d18f9d5cb3bc7f2	16.0	Code cleanup
+2e3ca04e2ee711cf8b87030b04f257316d990bde	9.5	Code cleanup
+3406901a2928627477374769416a32b01a08b131	7.0	Code cleanup
+48beecda7cbd2e73ebc11c88d3567ad064604bda	7.4	Remove geqo_random_seed parameter
+65ccd1039a50fd3a4a89d4efd0d726a363ec7876	6.5	Enable bushy plans by default.
+5ebaaa49445eb1ba7b299bbea3a477d4e4c0430b	9.3	Implement SQL-standard LATERAL subqueries. Code cleanup
+8548ddc61b5858b6466e69f66a6b1a7ea9daef06	13.0	Code cleanup
+3f90ec8597c3515e0d3190613b31491686027e4b	11.0	Postpone generate_gather_paths for topmost scan/join rel. Code cleanup
+927d61eeff78363ea3938c818d07e511ebaf75cf	9.2	PGINDENT
+52f77df613cea1803ce86321c37229626d9f213c	7.0	PGINDENT
+d8e34fa7a18fab4aa8eb010edac133d63ecc11c6	16.0	Code cleanup
+a31ad27fc5dc32a1453233575b3cf7b5c34cf515	8.1	Code cleanup
+0a7832005792fa6dad171f9cadb8d587fe0dd800	9.4	PGINDENT
+9d5c0af5862cc0141ea16ca90a9e01250716af37	6.1	Code cleanup
+9426047021651d8d7b6595c1377aef1909afcacd	7.1	Code cleanup
+6560407c7db2c7e32926a46f5fb52175ac10d9e5	9.1	PGINDENT
+dc43fc9b3aa3e0fa9c84faddad6d301813580f88	15.0	Code cleanup
+a5d7ba773dff04d700afca6cf86bff64dc663b4f	8.0	PGINDENT
+c0178f27a252128f96316a6c260a15c28960f510	6.1	Code cleanup
+181bdb90ba1f2361aec5a621c8f1e01736f8cad2	10.0	Code cleanup
+87cdaf5491ea6d9e2701bb2b557d64c80c7de4e0	7.1	Code cleanup
+fcb90fdc95c690a88727a79e9feb687fa6d6c3b9	7.4	Code cleanup
+e3d2f1f35d478eaabf4cd08b64967266760498ec	6.1	Code cleanup
+2489d76c4906f4461a364ca8ad7e0751ead8aa0d	16.0	Code cleanup
+6bef118b01ec541440fccf8ce3641fd025297de0	8.3	Улучшение кода для соединений
+c0d17c7aee68bb73140d11dc03973157e6ca7e76	6.5	Code cleanup
+e83bb10d6dcf05a666d4ada00d9788c7974ad378	9.3	Adjust definition of cheapest_total_path to work better with LATERAL. Code cleanup
+f49842d1ee31b976c681322f76025d7732e860f3	11.0	Basic partition-wise join functionality. Code cleanup
+f50b103ce1b0aca3f63d47865dcf6f89ded158e5	6.1	Code cleanup
+ea268cdc9a2631da4a5748b00059a9fd43470d0e	10.0	Code cleanup
+cb292206c5c160cde6eb5618de64f810e62f378a	7.1	Code cleanup
+98b6f37e47a9eb3540493caabf57d0f952ebdc6d	7.4	Code cleanup
+d9be0ff432fe4df419a19fe8319ea6fe6c96e00f	6.4	Code cleanup
+d0b4399d81f39decccb23fa38f772b71b51bf96a	8.0	Code cleanup
+61aa8258769d5b63d03931188aceb96de1273e16	6.5	Code cleanup
+72b6ad6313387110cb36b69a3732cd0936c3eba4	8.0	Code cleanup
+3fdb9bb9c74afa79f574438cbbf5178d30463bb6	6.5	Code cleanup
+8255c7a5eeba8f1a38b7a431c04909bde4f5e67d	12.0	PGINDENT
+6a68f42648f54690ad5b5ae6fb9104e86e15f0f1	7.1	Переход на `Grand Unified Configuration scheme' (GUC) Code cleanup
+a70e74b060ab2769523ad831f571cb80122121d3	7.1	Code cleanup
+2fb1abaeb016aeb45b9e6d0b81b7a7e92bb251b9	11.0	Code cleanup
+0b11a674fb11cc1571326c861ecdd7773d9e587f	11.0	Code cleanup
+4df8de7a682e98be2b9072458bb9e77513f53c47	8.2	Code cleanup
+c17117649b9ae23d5290c9626090dcaae333ea59	8.3	Code cleanup
+5caa3479c2efd31fca1b271db687e5e57c7de2d4	9.1	Code cleanup
+c82ca4c15828abdecf0ec5343d7f39b4f3a475f9	6.5	Re-enable bushy plans. Vadim want them.
+1c688d1bbe9e48234a6b2a6a6558ac441e26997e	6.1	Улучшение работы GEQO с представлениями
+517c8db8695e62afee438599a0c0da8f888b7490	6.1	Code cleanup
+e3b9852728902bc816bf02574a87eda9a0ca91a1	8.2	Teach planner how to rearrange join order for some classes of OUTER JOIN (и в GEQO тоже)
+5088f0748a39c3f480d9a9c1b34c2a25d3011611	7.1	Code cleanup
+ba3e76cc571eba3dea19c9465ff15ac3ac186576	13.0	Code cleanup
+f2ed835baf0f9d4d77df312a58550eb64b63eee7	6.5	Fix some typos in geqo optimizer it now generates reasonable plans again.  Still eats memory like there's no tomorrow, however :-(.
+1cff1b95ab6ddae32faa3efe0d95a820dbfdc164	13.0	Code cleanup
+59464bd6f928ad0da30502cbe9b54baec9ca2c69	9.6	Improve implementation of GEQO's init_tour() function. Use Fisher-Yates shuffle algorithm for random permutation Code cleanup
+672a80702824dafd7dfb6151c6d519dded320032	8.0	The default value for geqo_effort is supposed to be 40, not 1. The actual 'genetic' component of the GEQO algorithm has been practically disabled since 7.1 because of this mistake.
+f859c81c18669d05ac53f2c1e0163c6b804fddd5	6.5	Code cleanup
+944d3c395e292c213c1a2be617af1b8473299b1b	6.5	Code cleanup
+f18c57fdf1dd255cc26c4b6b3d6716c8a54ab890	8.3	Code cleanup
+3bf05e096b9f8375e640c5d7996aa57efd7f240c	11.0	Code cleanup
+e50f52a074bdf0d6a9dc384840e641c4c0b0bb1a	7.3	PGINDENT
+fdf5a5efb7b28c13085fe7313658de8d7b9914f6	8.3	PGINDENT
+ad604ac372fc777afbe06184a134a92639c0c8a4	7.0	Code cleanup
+1265724ff5abb1dcf468cb33153ae1326426d7a6	8.1	Code cleanup
+cbb4213af460c9112c2b74b3051809caac38322a	6.1	Code cleanup
+ed5003c58401e5727fcdd970505972394c95febb	7.1	Code cleanup
+9a0dd4fb183958f59f68d8a5f096dd8df18d9b59	6.3	Code cleanup
+ed8b7bdff9a7ab05ed7e34f575a3802b7cc3e51b	6.1	Code cleanup
+950c57600e72b28760c35b1c0fc2b371a106fa54	6.1	Code cleanup
+ba2883b264d7bc392604bc9f76abfc30de89f5f8	6.5	Code cleanup
+a12a23f0d03cc8bf22c6c38bc2394753ec34fcdf	7.1	Code cleanup
+c45bf5751b6338488bd79ce777210285531da373	9.6	Code cleanup
+a601366a460f68472bf70c4d94c57baa0a3ed1b2	16.0	Code cleanup
+52c9d259335c9670f6487c5f40fc53b57a4c7b17	7.3	Code cleanup
+de28dc9a04c4df5d711815b7a518501b43535a26	7.4	Code cleanup
+655473a7cd3903d2ce75054468c855d5c294aaf9	8.5	Code cleanup
+12c1552066cac81a6b93062e8966cfa0d2d56af5	7.2	Code cleanup
+1a95f12702b4e535b5e26ed9c3fcd0b2a1b1a20f	8.5	Code cleanup
+63bd0db12199c5df043e1dea0f2b574f622b3a4c	8.0	Code cleanup
+3a94e789f5c9537d804210be3cb26f7fb08e3b9e	7.1	Code cleanup
+645146260eb982655572277d948ae5ae0ad4a31f	6.3	Code cleanup
+921d749bd4c34c3349f1c254d5faa2f1cec03911	8.0	Code cleanup
+dd29fc2f61e91df8d5879b2dfd02bbabafa182ff	8.0	Code cleanup
+ad4b27ac3f281401b7e8a717f100e403a222224d	6.5	Code cleanup
+f6dba10e623fa575c8446f854aa63c97d4fedea3	7.4	Code cleanup
+a3a956bfe549cb94d9909bf2d6a24a67cb23be6f	6.1	Code cleanup
+9b556322c580cf4037f33f1150c02794e0aa15cd	8.2	Code cleanup
+\.
+
+
+--
+-- Data for Name: gitlog_geqo_all; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.gitlog_geqo_all (file, commit, author, date, year) FROM stdin;
+geqo_copy	c8e1ba736b2b9e8c98d37a5b77c4ed31baf94147	Bruce Momjian <bruce@momjian.us>	Mon Jan 2 15:00:37 2023 -0500	2023
+geqo_copy	27b77ecf9f4d5be211900eda54d8155ada50d696	Bruce Momjian <bruce@momjian.us>	Fri Jan 7 19:04:57 2022 -0500	2022
+geqo_copy	ca3b37487be333a1d241dab1bbdd17a211a88f43	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:06:25 2021 -0500	2021
+geqo_copy	7559d8ebfa11d98728e816f6b655582ce41150f3	Bruce Momjian <bruce@momjian.us>	Wed Jan 1 12:21:45 2020 -0500	2020
+geqo_copy	97c39498e5ca9208d3de5a443a2282923619bf91	Bruce Momjian <bruce@momjian.us>	Wed Jan 2 12:44:25 2019 -0500	2019
+geqo_copy	9d4649ca49416111aee2c84b7e4441a0b7aa2fac	Bruce Momjian <bruce@momjian.us>	Tue Jan 2 23:30:12 2018 -0500	2018
+geqo_copy	1d25779284fe1ba08ecd57e647292a9deb241376	Bruce Momjian <bruce@momjian.us>	Tue Jan 3 13:48:53 2017 -0500	2017
+geqo_copy	ee943004466418595363d567f18c053bae407792	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:33:40 2016 -0500	2016
+geqo_copy	4baaf863eca5412e07a8441b3b7e7482b7a8b21a	Bruce Momjian <bruce@momjian.us>	Tue Jan 6 11:43:47 2015 -0500	2015
+geqo_copy	7e04792a1cbd1763edf72474f6b1fbad2cd0ad31	Bruce Momjian <bruce@momjian.us>	Tue Jan 7 16:05:30 2014 -0500	2014
+geqo_copy	bd61a623ace3f3db8da1c7936416706968ae6ec2	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 17:15:01 2013 -0500	2013
+geqo_copy	e126958c2efdfc2d60b978d1fc7a780ff647e8ad	Bruce Momjian <bruce@momjian.us>	Sun Jan 1 18:01:58 2012 -0500	2012
+geqo_copy	5d950e3b0c75d65dd09f8ca5f76cd429a0aabbdc	Bruce Momjian <bruce@momjian.us>	Sat Jan 1 13:18:15 2011 -0500	2011
+geqo_copy	9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+geqo_copy	0239800893ef4901e3c085e06534934a485d3bf0	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 16:58:17 2010 +0000	2010
+geqo_copy	f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+geqo_copy	511db38ace2690f19816465baed07cefe535bfec	Bruce Momjian <bruce@momjian.us>	Thu Jan 1 17:24:05 2009 +0000	2009
+geqo_copy	9098ab9e327c2e6b0fece9e550d7d93663c60ff5	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 19:46:01 2008 +0000	2008
+geqo_copy	29dccf5fe0e98af9ce023299c4fe9776a52fd23d	Bruce Momjian <bruce@momjian.us>	Fri Jan 5 22:20:05 2007 +0000	2007
+geqo_copy	f2f5b05655afa80377757a2c335c01b28de24429	Bruce Momjian <bruce@momjian.us>	Sun Mar 5 15:59:11 2006 +0000	2006
+geqo_copy	2ff501590b323bde14f7e662fd89ad12a4d2f4e0	PostgreSQL Daemon <webmaster@postgresql.org>	Fri Dec 31 22:04:05 2004 +0000	2004
+geqo_copy	da9a8649d810826daf7868c6be9a4086c835c0ee	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 04:13:13 2004 +0000	2004
+geqo_copy	55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+geqo_copy	f3c3deb7d003cad114696b0bf5e01b04bb5b8fd0	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 02:40:20 2003 +0000	2003
+geqo_copy	d84fe82230c593f3dc5d7f427849b99d1efa8a0a	Bruce Momjian <bruce@momjian.us>	Thu Jun 20 20:29:54 2002 +0000	2002
+geqo_copy	623bf843d201438db1590906b4c39faf9d2e1c2a	Bruce Momjian <bruce@momjian.us>	Wed Jan 24 19:43:33 2001 +0000	2001
+geqo_copy	5c25d60244d3a4b458ba55d4f1e50386edb26507	Bruce Momjian <bruce@momjian.us>	Wed Jan 26 05:58:53 2000 +0000	2000
+geqo_copy	a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+geqo_copy	2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+geqo_copy	4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+geqo_copy	6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+geqo_copy	59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+geqo_copy	319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+geqo_copy	1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+geqo_copy	29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+geqo_cx	24d2b2680a8d0e01b30ce8a41c4eb3b47aca5031	Alvaro Herrera <alvherre@alvh.no-ip.org>	Wed Apr 13 19:14:20 2022 +0200	2022
+geqo_cx	14aec03502302eff6c67981d8fd121175c436ce9	Amit Kapila <akapila@postgresql.org>	Tue Nov 12 08:30:16 2019 +0530	2019
+geqo_cx	21d304dfedb4f26d0d6587d9ac39b1b5c499bb55	Tom Lane <tgl@sss.pgh.pa.us>	Mon Aug 14 17:29:33 2017 -0400	2017
+geqo_cx	c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+geqo_cx	9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05 2017 -0400	2017
+geqo_cx	9af4159fce6654aa0e081b00d02bca40b978745c	Bruce Momjian <bruce@momjian.us>	Wed May 29 16:58:43 2013 -0400	2013
+geqo_cx	9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+geqo_cx	f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+geqo_cx	55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+geqo_cx	a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+geqo_cx	2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+geqo_cx	4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+geqo_cx	6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+geqo_cx	af74855a608da4cd7ef88ceb2241ec1c75537f39	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 03:29:17 1998 +0000	1998
+geqo_cx	59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+geqo_cx	319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+geqo_cx	1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+geqo_cx	29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+geqo_erx	f14aad5169baa5e2ac25d49f1d18f9d5cb3bc7f2	Peter Eisentraut <peter@eisentraut.org>	Fri Oct 7 13:28:38  2022 +0200	2022
+geqo_erx	24d2b2680a8d0e01b30ce8a41c4eb3b47aca5031	Alvaro Herrera <alvherre@alvh.no-ip.org>	Wed Apr 13 19:14:20 2022 +0200	2022
+geqo_erx	14aec03502302eff6c67981d8fd121175c436ce9	Amit Kapila <akapila@postgresql.org>	Tue Nov 12 08:30:16 2019 +0530	2019
+geqo_erx	c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+geqo_erx	9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05  2017 -0400	2017
+geqo_erx	a47b38c9ee4960556b0edb76a42171bd281cc1cf	Peter Eisentraut <peter_e@gmx.net>	Tue Mar 14 12:57:10 2017 -0400	2017
+geqo_erx	181bdb90ba1f2361aec5a621c8f1e01736f8cad2	Heikki Linnakangas <heikki.linnakangas@iki.fi>	Mon Feb 6 11:33:58  2017 +0200	2017
+geqo_erx	2e3ca04e2ee711cf8b87030b04f257316d990bde	Andres Freund <andres@anarazel.de>	Sun Apr 26 19:05:39 2015 +0200	2015
+geqo_erx	9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+geqo_erx	f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+geqo_erx	1dc34982511d91ef8a2b71bdcb870f067c1b3da9	Bruce Momjian <bruce@momjian.us>	Sat Oct 15 02:49:52 2005 +0000	2005
+geqo_erx	55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+geqo_erx	45708f5ebcee7df4e684d4fb5ae7b1856dfcefa1	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jul 25 00:01:09 2003 +0000	2003
+geqo_erx	a033daf5663944872080f1f52deb2ffcb40f4042	Bruce Momjian <bruce@momjian.us>	Sat Mar 2 21:39:36  2002 +0000	2002
+geqo_erx	b81844b1738c584d92330a5ccd0fbd8b603d2886	Bruce Momjian <bruce@momjian.us>	Thu Oct 25 05:50:21 2001 +0000	2001
+geqo_erx	a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+geqo_erx	2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+geqo_erx	4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+geqo_erx	0cf1b79528aa98fa7e0acfd60371251bd691cf5a	Bruce Momjian <bruce@momjian.us>	Wed Jul 14 01:20:30 1999 +0000	1999
+geqo_erx	6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+geqo_erx	af74855a608da4cd7ef88ceb2241ec1c75537f39	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 03:29:17  1998 +0000	1998
+geqo_erx	6bd323c6b3f65b26273d5efb7ddd0ac04d039546	Bruce Momjian <bruce@momjian.us>	Mon Jun 15 19:30:31 1998 +0000	1998
+geqo_erx	a32450a5855eed4bfd756ef292ee45d3c754665b	Bruce Momjian <bruce@momjian.us>	Thu Feb 26 04:46:47 1998 +0000	1998
+geqo_erx	679d39b9c8fbe8f5613879b11431d8152d85ec54	Bruce Momjian <bruce@momjian.us>	Wed Jan 7 21:07:04  1998 +0000	1998
+geqo_erx	0d9fc5afd6eda651d2ef0a4776e08f02d32a96de	Bruce Momjian <bruce@momjian.us>	Mon Jan 5 03:35:55  1998 +0000	1998
+geqo_erx	59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23  1997 +0000	1997
+geqo_erx	319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22  1997 +0000	1997
+geqo_erx	1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48  1997 +0000	1997
+geqo_erx	f50b103ce1b0aca3f63d47865dcf6f89ded158e5	Marc G. Fournier <scrappy@hub.org>	Fri Jun 6 00:37:23  1997 +0000	1997
+geqo_erx	29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+geqo_eval	2489d76c4906f4461a364ca8ad7e0751ead8aa0d	Tom Lane <tgl@sss.pgh.pa.us>	Mon Jan 30 13:16:20 2023 -0500	2023
+geqo_eval	c8e1ba736b2b9e8c98d37a5b77c4ed31baf94147	Bruce Momjian <bruce@momjian.us>	Mon Jan 2 15:00:37 2023 -0500	2023
+geqo_eval	d8e34fa7a18fab4aa8eb010edac133d63ecc11c6	Tom Lane <tgl@sss.pgh.pa.us>	Sat Jul 30 13:05:15 2022 -0400	2022
+geqo_eval	27b77ecf9f4d5be211900eda54d8155ada50d696	Bruce Momjian <bruce@momjian.us>	Fri Jan 7 19:04:57 2022 -0500	2022
+geqo_eval	ca3b37487be333a1d241dab1bbdd17a211a88f43	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:06:25 2021 -0500	2021
+geqo_eval	ba3e76cc571eba3dea19c9465ff15ac3ac186576	Tomas Vondra <tomas.vondra@postgresql.org>	Tue Apr 7 16:43:18 2020 +0200	2020
+geqo_eval	7559d8ebfa11d98728e816f6b655582ce41150f3	Bruce Momjian <bruce@momjian.us>	Wed Jan 1 12:21:45 2020 -0500	2020
+geqo_eval	c245776906b065fcd59831a25c3b24ad3ddcd849	Tom Lane <tgl@sss.pgh.pa.us>	Tue Jul 16 13:12:24 2019 -0400	2019
+geqo_eval	1cff1b95ab6ddae32faa3efe0d95a820dbfdc164	Tom Lane <tgl@sss.pgh.pa.us>	Mon Jul 15 13:41:58 2019 -0400	2019
+geqo_eval	8255c7a5eeba8f1a38b7a431c04909bde4f5e67d	Tom Lane <tgl@sss.pgh.pa.us>	Wed May 22 13:04:48 2019 -0400	2019
+geqo_eval	97c39498e5ca9208d3de5a443a2282923619bf91	Bruce Momjian <bruce@momjian.us>	Wed Jan 2 12:44:25 2019 -0500	2019
+geqo_eval	3f90ec8597c3515e0d3190613b31491686027e4b	Robert Haas <rhaas@postgresql.org>	Mon Mar 12 16:45:15 2018 -0400	2018
+geqo_eval	3bf05e096b9f8375e640c5d7996aa57efd7f240c	Robert Haas <rhaas@postgresql.org>	Mon Feb 26 09:30:12 2018 -0500	2018
+geqo_eval	2fb1abaeb016aeb45b9e6d0b81b7a7e92bb251b9	Peter Eisentraut <peter_e@gmx.net>	Fri Feb 16 10:33:59 2018 -0500	2018
+geqo_eval	9d4649ca49416111aee2c84b7e4441a0b7aa2fac	Bruce Momjian <bruce@momjian.us>	Tue Jan 2 23:30:12 2018 -0500	2018
+geqo_eval	f49842d1ee31b976c681322f76025d7732e860f3	Robert Haas <rhaas@postgresql.org>	Fri Oct 6 11:11:10 2017 -0400	2017
+geqo_eval	1d25779284fe1ba08ecd57e647292a9deb241376	Bruce Momjian <bruce@momjian.us>	Tue Jan 3 13:48:53 2017 -0500	2017
+geqo_eval	ea268cdc9a2631da4a5748b00059a9fd43470d0e	Tom Lane <tgl@sss.pgh.pa.us>	Sat Aug 27 17:50:38 2016 -0400	2016
+geqo_eval	c45bf5751b6338488bd79ce777210285531da373	Tom Lane <tgl@sss.pgh.pa.us>	Sat Apr 30 12:29:21 2016 -0400	2016
+geqo_eval	ee943004466418595363d567f18c053bae407792	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:33:40 2016 -0500	2016
+geqo_eval	1a179f36f7c612d3560a72396c559cd876dfab6b	Tom Lane <tgl@sss.pgh.pa.us>	Tue Feb 10 20:37:19 2015 -0500	2015
+geqo_eval	4baaf863eca5412e07a8441b3b7e7482b7a8b21a	Bruce Momjian <bruce@momjian.us>	Tue Jan 6 11:43:47 2015 -0500	2015
+geqo_eval	0a7832005792fa6dad171f9cadb8d587fe0dd800	Bruce Momjian <bruce@momjian.us>	Tue May 6 12:12:18 2014 -0400	2014
+geqo_eval	7e04792a1cbd1763edf72474f6b1fbad2cd0ad31	Bruce Momjian <bruce@momjian.us>	Tue Jan 7 16:05:30 2014 -0500	2014
+geqo_eval	bd61a623ace3f3db8da1c7936416706968ae6ec2	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 17:15:01 2013 -0500	2013
+geqo_eval	e83bb10d6dcf05a666d4ada00d9788c7974ad378	Tom Lane <tgl@sss.pgh.pa.us>	Wed Aug 29 22:05:27 2012 -0400	2012
+geqo_eval	5ebaaa49445eb1ba7b299bbea3a477d4e4c0430b	Tom Lane <tgl@sss.pgh.pa.us>	Tue Aug 7 19:02:54 2012 -0400	2012
+geqo_eval	e126958c2efdfc2d60b978d1fc7a780ff647e8ad	Bruce Momjian <bruce@momjian.us>	Sun Jan 1 18:01:58 2012 -0500	2012
+geqo_eval	5d950e3b0c75d65dd09f8ca5f76cd429a0aabbdc	Bruce Momjian <bruce@momjian.us>	Sat Jan 1 13:18:15 2011 -0500	2011
+geqo_eval	9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+geqo_eval	65e806cba1f0f154d51caa7478e7192ce58d1056	Bruce Momjian <bruce@momjian.us>	Fri Feb 26 02:01:40 2010 +0000	2010
+geqo_eval	0239800893ef4901e3c085e06534934a485d3bf0	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 16:58:17 2010 +0000	2010
+geqo_eval	1a95f12702b4e535b5e26ed9c3fcd0b2a1b1a20f	Tom Lane <tgl@sss.pgh.pa.us>	Sat Nov 28 00:46:19 2009 +0000	2009
+geqo_eval	400e2c934457bef4bc3cc9a3e49b6289bd761bc0	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jul 19 21:00:43 2009 +0000	2009
+geqo_eval	f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+geqo_eval	511db38ace2690f19816465baed07cefe535bfec	Bruce Momjian <bruce@momjian.us>	Thu Jan 1 17:24:05 2009 +0000	2009
+geqo_eval	9098ab9e327c2e6b0fece9e550d7d93663c60ff5	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 19:46:01 2008 +0000	2008
+geqo_eval	fdf5a5efb7b28c13085fe7313658de8d7b9914f6	Bruce Momjian <bruce@momjian.us>	Thu Nov 15 21:14:46 2007 +0000	2007
+geqo_eval	6bef118b01ec541440fccf8ce3641fd025297de0	Tom Lane <tgl@sss.pgh.pa.us>	Fri Feb 16 00:14:01 2007 +0000	2007
+geqo_eval	c17117649b9ae23d5290c9626090dcaae333ea59	Tom Lane <tgl@sss.pgh.pa.us>	Tue Feb 13 02:31:03 2007 +0000	2007
+geqo_eval	29dccf5fe0e98af9ce023299c4fe9776a52fd23d	Bruce Momjian <bruce@momjian.us>	Fri Jan 5 22:20:05 2007 +0000	2007
+geqo_eval	f18c57fdf1dd255cc26c4b6b3d6716c8a54ab890	Tom Lane <tgl@sss.pgh.pa.us>	Tue Dec 12 21:31:02 2006 +0000	2006
+geqo_eval	4df8de7a682e98be2b9072458bb9e77513f53c47	Tom Lane <tgl@sss.pgh.pa.us>	Tue Oct 24 17:50:22 2006 +0000	2006
+geqo_eval	f2f5b05655afa80377757a2c335c01b28de24429	Bruce Momjian <bruce@momjian.us>	Sun Mar 5 15:59:11 2006 +0000	2006
+geqo_eval	e3b9852728902bc816bf02574a87eda9a0ca91a1	Tom Lane <tgl@sss.pgh.pa.us>	Tue Dec 20 02:30:36 2005 +0000	2005
+geqo_eval	436a2956d80db29ac1dff640b631620d856b4f70	Bruce Momjian <bruce@momjian.us>	Tue Nov 22 18:17:34 2005 +0000	2005
+geqo_eval	1dc34982511d91ef8a2b71bdcb870f067c1b3da9	Bruce Momjian <bruce@momjian.us>	Sat Oct 15 02:49:52 2005 +0000	2005
+geqo_eval	a31ad27fc5dc32a1453233575b3cf7b5c34cf515	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jun 9 04:19:00 2005 +0000	2005
+geqo_eval	e3a33a9a9f1a6afb80c9b83c1456c1a36fbcb70b	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 8 23:02:05 2005 +0000	2005
+geqo_eval	9ab4d98168407c3436d3f0e02d32720b0d9075a0	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 5 22:32:58 2005 +0000	2005
+geqo_eval	2ff501590b323bde14f7e662fd89ad12a4d2f4e0	PostgreSQL Daemon <webmaster@postgresql.org>	Fri Dec 31 22:04:05 2004 +0000	2004
+geqo_eval	dd29fc2f61e91df8d5879b2dfd02bbabafa182ff	Tom Lane <tgl@sss.pgh.pa.us>	Wed Dec 15 21:13:34 2004 +0000	2004
+geqo_eval	b6b71b85bc45b49005b5aec87cba2c33fc8baf49	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 05:07:03 2004 +0000	2004
+geqo_eval	da9a8649d810826daf7868c6be9a4086c835c0ee	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 04:13:13 2004 +0000	2004
+geqo_eval	72b6ad6313387110cb36b69a3732cd0936c3eba4	Neil Conway <neilc@samurai.com>	Sun May 30 23:40:41 2004 +0000	2004
+geqo_eval	d0b4399d81f39decccb23fa38f772b71b51bf96a	Neil Conway <neilc@samurai.com>	Wed May 26 04:41:50 2004 +0000	2004
+geqo_eval	3969f2924bead7847adbe1fd736eefaf138af942	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jan 23 23:54:21 2004 +0000	2004
+geqo_eval	969685ad443637a24650909357e4e768a88412fc	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 19:52:15 2003 +0000	2003
+geqo_eval	f3c3deb7d003cad114696b0bf5e01b04bb5b8fd0	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 02:40:20 2003 +0000	2003
+geqo_eval	089003fb462fcce46c02bf47322b429f73c33c50	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 00:43:34 2003 +0000	2003
+geqo_eval	45708f5ebcee7df4e684d4fb5ae7b1856dfcefa1	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jul 25 00:01:09 2003 +0000	2003
+geqo_eval	de28dc9a04c4df5d711815b7a518501b43535a26	Tom Lane <tgl@sss.pgh.pa.us>	Fri May 2 20:54:36 2003 +0000	2003
+geqo_eval	bdfbfde1b168b3332c4cdac34ac86a80aaf4d442	Tom Lane <tgl@sss.pgh.pa.us>	Mon Jan 20 18:55:07 2003 +0000	2003
+geqo_eval	9f76d0d926ffe72e32248b7c79f585c47e643981	Tom Lane <tgl@sss.pgh.pa.us>	Mon Dec 16 21:30:30 2002 +0000	2002
+geqo_eval	d84fe82230c593f3dc5d7f427849b99d1efa8a0a	Bruce Momjian <bruce@momjian.us>	Thu Jun 20 20:29:54 2002 +0000	2002
+geqo_eval	9e1552607a9dc6bc23e43d46770a9063ade4f3f0	Bruce Momjian <bruce@momjian.us>	Thu Mar 22 04:01:46 2001 +0000	2001
+geqo_eval	623bf843d201438db1590906b4c39faf9d2e1c2a	Bruce Momjian <bruce@momjian.us>	Wed Jan 24 19:43:33 2001 +0000	2001
+geqo_eval	5088f0748a39c3f480d9a9c1b34c2a25d3011611	Bruce Momjian <bruce@momjian.us>	Wed Jan 17 17:26:45 2001 +0000	2001
+geqo_eval	ba2ea6e0f5f270571e7f661cd2c7645160a9562a	Tom Lane <tgl@sss.pgh.pa.us>	Tue Sep 19 18:42:34 2000 +0000	2000
+geqo_eval	ed5003c58401e5727fcdd970505972394c95febb	Tom Lane <tgl@sss.pgh.pa.us>	Tue Sep 12 21:07:18 2000 +0000	2000
+geqo_eval	87cdaf5491ea6d9e2701bb2b557d64c80c7de4e0	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jul 28 02:13:52 2000 +0000	2000
+geqo_eval	cb292206c5c160cde6eb5618de64f810e62f378a	Peter Eisentraut <peter_e@gmx.net>	Wed Jul 12 22:59:15 2000 +0000	2000
+geqo_eval	1aebc3618a0be13451918581ad390ad9a3518702	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 28 03:33:33 2000 +0000	2000
+geqo_eval	a12a23f0d03cc8bf22c6c38bc2394753ec34fcdf	Bruce Momjian <bruce@momjian.us>	Tue May 30 00:49:57 2000 +0000	2000
+geqo_eval	52f77df613cea1803ce86321c37229626d9f213c	Bruce Momjian <bruce@momjian.us>	Wed Apr 12 17:17:23 2000 +0000	2000
+geqo_eval	b1577a7c78d2d8880b3c0f94689fb75bd074c897	Tom Lane <tgl@sss.pgh.pa.us>	Tue Feb 15 20:49:31 2000 +0000	2000
+geqo_eval	d8733ce674f62f0e13cfc97d0340b43e1906f458	Tom Lane <tgl@sss.pgh.pa.us>	Mon Feb 7 04:41:04 2000 +0000	2000
+geqo_eval	5c25d60244d3a4b458ba55d4f1e50386edb26507	Bruce Momjian <bruce@momjian.us>	Wed Jan 26 05:58:53 2000 +0000	2000
+geqo_eval	166b5c1def56a8c43536ac64bd0ba92517f67765	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jan 9 00:26:47 2000 +0000	2000
+geqo_eval	ad604ac372fc777afbe06184a134a92639c0c8a4	Bruce Momjian <bruce@momjian.us>	Tue Sep 21 20:58:25 1999 +0000	1999
+geqo_eval	e6381966c1886badbc19c94ac1f1ffbc104125ab	Tom Lane <tgl@sss.pgh.pa.us>	Mon Aug 16 02:17:58 1999 +0000	1999
+geqo_eval	a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+geqo_eval	2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+geqo_eval	4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+geqo_eval	fcff1cdf4eadbc6dcba4b9a2cd09f38f466ffa31	Bruce Momjian <bruce@momjian.us>	Tue May 25 22:43:53 1999 +0000	1999
+geqo_eval	07842084fe3e11041f83563c851236395f481470	Bruce Momjian <bruce@momjian.us>	Tue May 25 16:15:34 1999 +0000	1999
+geqo_eval	1332c1e14404407c9a106bf7096e8f58b16dc566	Tom Lane <tgl@sss.pgh.pa.us>	Mon May 17 00:25:34 1999 +0000	1999
+geqo_eval	f2ed835baf0f9d4d77df312a58550eb64b63eee7	Tom Lane <tgl@sss.pgh.pa.us>	Sun May 16 19:45:00 1999 +0000	1999
+geqo_eval	65ccd1039a50fd3a4a89d4efd0d726a363ec7876	Bruce Momjian <bruce@momjian.us>	Thu Feb 18 05:26:34 1999 +0000	1999
+geqo_eval	e78662d879dec9f5630637119333e99121ee03d3	Bruce Momjian <bruce@momjian.us>	Thu Feb 18 04:55:54 1999 +0000	1999
+geqo_eval	c82ca4c15828abdecf0ec5343d7f39b4f3a475f9	Bruce Momjian <bruce@momjian.us>	Tue Feb 16 00:41:03 1999 +0000	1999
+geqo_eval	ba2883b264d7bc392604bc9f76abfc30de89f5f8	Bruce Momjian <bruce@momjian.us>	Mon Feb 15 03:22:37 1999 +0000	1999
+geqo_eval	944d3c395e292c213c1a2be617af1b8473299b1b	Tom Lane <tgl@sss.pgh.pa.us>	Mon Feb 15 02:04:58 1999 +0000	1999
+geqo_eval	61aa8258769d5b63d03931188aceb96de1273e16	Bruce Momjian <bruce@momjian.us>	Sun Feb 14 04:57:02 1999 +0000	1999
+geqo_eval	6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+geqo_eval	3fdb9bb9c74afa79f574438cbbf5178d30463bb6	Bruce Momjian <bruce@momjian.us>	Fri Feb 12 05:57:08 1999 +0000	1999
+geqo_eval	9dbb0efb0be24c43012546cf5756866fc606af4b	Bruce Momjian <bruce@momjian.us>	Wed Feb 10 21:02:50 1999 +0000	1999
+geqo_eval	9322950aa44ef3647ccdd043cffe92cead171587	Bruce Momjian <bruce@momjian.us>	Wed Feb 3 21:18:02 1999 +0000	1999
+geqo_eval	8d9237d48510464dc03e8b00e7203927dc07c4d4	Bruce Momjian <bruce@momjian.us>	Wed Feb 3 20:15:53 1999 +0000	1999
+geqo_eval	fa1a8d6a97068295fe30ac646aec7493a6305bc2	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 04:40:42 1998 +0000	1998
+geqo_eval	af74855a608da4cd7ef88ceb2241ec1c75537f39	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 03:29:17 1998 +0000	1998
+geqo_eval	2d32d909b559d7cc13cbcd09967c84277d9eeced	Bruce Momjian <bruce@momjian.us>	Mon Aug 10 02:26:40 1998 +0000	1998
+geqo_eval	d9be0ff432fe4df419a19fe8319ea6fe6c96e00f	Bruce Momjian <bruce@momjian.us>	Tue Aug 4 16:44:31 1998 +0000	1998
+geqo_eval	584f9438caef700f25596618141e29265f9595da	Bruce Momjian <bruce@momjian.us>	Sat Jul 18 04:22:52 1998 +0000	1998
+geqo_eval	6bd323c6b3f65b26273d5efb7ddd0ac04d039546	Bruce Momjian <bruce@momjian.us>	Mon Jun 15 19:30:31 1998 +0000	1998
+geqo_eval	a32450a5855eed4bfd756ef292ee45d3c754665b	Bruce Momjian <bruce@momjian.us>	Thu Feb 26 04:46:47 1998 +0000	1998
+geqo_eval	679d39b9c8fbe8f5613879b11431d8152d85ec54	Bruce Momjian <bruce@momjian.us>	Wed Jan 7 21:07:04 1998 +0000	1998
+geqo_eval	0d9fc5afd6eda651d2ef0a4776e08f02d32a96de	Bruce Momjian <bruce@momjian.us>	Mon Jan 5 03:35:55 1998 +0000	1998
+geqo_eval	59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+geqo_eval	319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+geqo_eval	1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+geqo_eval	ea5b5357cdc79c7742c035032f5500e4a97a6d55	Bruce Momjian <bruce@momjian.us>	Tue Aug 12 22:55:25 1997 +0000	1997
+geqo_eval	cbb4213af460c9112c2b74b3051809caac38322a	Vadim B. Mikheev <vadim4o@yahoo.com>	Tue Jun 10 07:53:55 1997 +0000	1997
+geqo_eval	e3d2f1f35d478eaabf4cd08b64967266760498ec	Vadim B. Mikheev <vadim4o@yahoo.com>	Fri Jun 6 03:18:02 1997 +0000	1997
+geqo_eval	c0178f27a252128f96316a6c260a15c28960f510	Marc G. Fournier <scrappy@hub.org>	Fri Jun 6 00:38:17 1997 +0000	1997
+geqo_eval	1c688d1bbe9e48234a6b2a6a6558ac441e26997e	Marc G. Fournier <scrappy@hub.org>	Wed Apr 9 08:31:29 1997 +0000	1997
+geqo_eval	9d5c0af5862cc0141ea16ca90a9e01250716af37	Marc G. Fournier <scrappy@hub.org>	Thu Apr 3 19:56:47 1997 +0000	1997
+geqo_eval	ed8b7bdff9a7ab05ed7e34f575a3802b7cc3e51b	Marc G. Fournier <scrappy@hub.org>	Mon Mar 3 23:26:45 1997 +0000	1997
+geqo_eval	a3a956bfe549cb94d9909bf2d6a24a67cb23be6f	Bruce Momjian <bruce@momjian.us>	Sat Mar 1 22:22:21 1997 +0000	1997
+geqo_eval	ee6d3a73263c8b8d793ec8fb2f0d6ba2c4ba88e6	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 14:52:06 1997 +0000	1997
+geqo_eval	950c57600e72b28760c35b1c0fc2b371a106fa54	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 14:29:22 1997 +0000	1997
+geqo_eval	517c8db8695e62afee438599a0c0da8f888b7490	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 14:26:42 1997 +0000	1997
+geqo_eval	29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+geqo_main	c8e1ba736b2b9e8c98d37a5b77c4ed31baf94147	Bruce Momjian <bruce@momjian.us>	Mon Jan 2 15:00:37 2023 -0500	2023
+geqo_main	dc43fc9b3aa3e0fa9c84faddad6d301813580f88	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jan 23 11:09:00 2022 -0500	2022
+geqo_main	27b77ecf9f4d5be211900eda54d8155ada50d696	Bruce Momjian <bruce@momjian.us>	Fri Jan 7 19:04:57 2022 -0500	2022
+geqo_main	ca3b37487be333a1d241dab1bbdd17a211a88f43	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:06:25 2021 -0500	2021
+geqo_main	7559d8ebfa11d98728e816f6b655582ce41150f3	Bruce Momjian <bruce@momjian.us>	Wed Jan 1 12:21:45 2020 -0500	2020
+geqo_main	97c39498e5ca9208d3de5a443a2282923619bf91	Bruce Momjian <bruce@momjian.us>	Wed Jan 2 12:44:25 2019 -0500	2019
+geqo_main	9d4649ca49416111aee2c84b7e4441a0b7aa2fac	Bruce Momjian <bruce@momjian.us>	Tue Jan 2 23:30:12 2018 -0500	2018
+geqo_main	9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05 2017 -0400	2017
+geqo_main	1d25779284fe1ba08ecd57e647292a9deb241376	Bruce Momjian <bruce@momjian.us>	Tue Jan 3 13:48:53 2017 -0500	2017
+geqo_main	ee943004466418595363d567f18c053bae407792	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:33:40 2016 -0500	2016
+geqo_main	1a179f36f7c612d3560a72396c559cd876dfab6b	Tom Lane <tgl@sss.pgh.pa.us>	Tue Feb 10 20:37:19 2015 -0500	2015
+geqo_main	4baaf863eca5412e07a8441b3b7e7482b7a8b21a	Bruce Momjian <bruce@momjian.us>	Tue Jan 6 11:43:47 2015 -0500	2015
+geqo_main	7e04792a1cbd1763edf72474f6b1fbad2cd0ad31	Bruce Momjian <bruce@momjian.us>	Tue Jan 7 16:05:30 2014 -0500	2014
+geqo_main	bd61a623ace3f3db8da1c7936416706968ae6ec2	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 17:15:01 2013 -0500	2013
+geqo_main	e126958c2efdfc2d60b978d1fc7a780ff647e8ad	Bruce Momjian <bruce@momjian.us>	Sun Jan 1 18:01:58 2012 -0500	2012
+geqo_main	6560407c7db2c7e32926a46f5fb52175ac10d9e5	Bruce Momjian <bruce@momjian.us>	Thu Jun 9 14:32:50 2011 -0400	2011
+geqo_main	5caa3479c2efd31fca1b271db687e5e57c7de2d4	Peter Eisentraut <peter_e@gmx.net>	Mon Apr 11 22:28:45 2011 +0300	2011
+geqo_main	5d950e3b0c75d65dd09f8ca5f76cd429a0aabbdc	Bruce Momjian <bruce@momjian.us>	Sat Jan 1 13:18:15 2011 -0500	2011
+geqo_main	9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+geqo_main	0239800893ef4901e3c085e06534934a485d3bf0	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 16:58:17 2010 +0000	2010
+geqo_main	400e2c934457bef4bc3cc9a3e49b6289bd761bc0	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jul 19 21:00:43 2009 +0000	2009
+geqo_main	f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+geqo_main	511db38ace2690f19816465baed07cefe535bfec	Bruce Momjian <bruce@momjian.us>	Thu Jan 1 17:24:05 2009 +0000	2009
+geqo_main	9098ab9e327c2e6b0fece9e550d7d93663c60ff5	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 19:46:01 2008 +0000	2008
+geqo_main	29dccf5fe0e98af9ce023299c4fe9776a52fd23d	Bruce Momjian <bruce@momjian.us>	Fri Jan 5 22:20:05 2007 +0000	2007
+geqo_main	e0522505bd13bc5aae993fc50b8f420665d78e96	Bruce Momjian <bruce@momjian.us>	Fri Jul 14 14:52:27 2006 +0000	2006
+geqo_main	f2f5b05655afa80377757a2c335c01b28de24429	Bruce Momjian <bruce@momjian.us>	Sun Mar 5 15:59:11 2006 +0000	2006
+geqo_main	1dc34982511d91ef8a2b71bdcb870f067c1b3da9	Bruce Momjian <bruce@momjian.us>	Sat Oct 15 02:49:52 2005 +0000	2005
+geqo_main	e3a33a9a9f1a6afb80c9b83c1456c1a36fbcb70b	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 8 23:02:05 2005 +0000	2005
+geqo_main	9ab4d98168407c3436d3f0e02d32720b0d9075a0	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 5 22:32:58 2005 +0000	2005
+geqo_main	2ff501590b323bde14f7e662fd89ad12a4d2f4e0	PostgreSQL Daemon <webmaster@postgresql.org>	Fri Dec 31 22:04:05 2004 +0000	2004
+geqo_main	b6b71b85bc45b49005b5aec87cba2c33fc8baf49	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 05:07:03 2004 +0000	2004
+geqo_main	da9a8649d810826daf7868c6be9a4086c835c0ee	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 04:13:13 2004 +0000	2004
+geqo_main	921d749bd4c34c3349f1c254d5faa2f1cec03911	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jun 3 02:08:07 2004 +0000	2004
+geqo_main	63bd0db12199c5df043e1dea0f2b574f622b3a4c	Tom Lane <tgl@sss.pgh.pa.us>	Fri May 21 05:08:06 2004 +0000	2004
+geqo_main	3969f2924bead7847adbe1fd736eefaf138af942	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jan 23 23:54:21 2004 +0000	2004
+geqo_main	672a80702824dafd7dfb6151c6d519dded320032	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jan 21 23:33:34 2004 +0000	2004
+geqo_main	969685ad443637a24650909357e4e768a88412fc	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 19:52:15 2003 +0000	2003
+geqo_main	48beecda7cbd2e73ebc11c88d3567ad064604bda	Tom Lane <tgl@sss.pgh.pa.us>	Sun Sep 7 15:26:54 2003 +0000	2003
+geqo_main	fcb90fdc95c690a88727a79e9feb687fa6d6c3b9	Tom Lane <tgl@sss.pgh.pa.us>	Tue Aug 12 18:23:21 2003 +0000	2003
+geqo_main	f3c3deb7d003cad114696b0bf5e01b04bb5b8fd0	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 02:40:20 2003 +0000	2003
+geqo_main	089003fb462fcce46c02bf47322b429f73c33c50	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 00:43:34 2003 +0000	2003
+geqo_main	45708f5ebcee7df4e684d4fb5ae7b1856dfcefa1	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jul 25 00:01:09 2003 +0000	2003
+geqo_main	98b6f37e47a9eb3540493caabf57d0f952ebdc6d	Bruce Momjian <bruce@momjian.us>	Tue May 27 17:49:47 2003 +0000	2003
+geqo_main	bdfbfde1b168b3332c4cdac34ac86a80aaf4d442	Tom Lane <tgl@sss.pgh.pa.us>	Mon Jan 20 18:55:07 2003 +0000	2003
+geqo_main	9f76d0d926ffe72e32248b7c79f585c47e643981	Tom Lane <tgl@sss.pgh.pa.us>	Mon Dec 16 21:30:30 2002 +0000	2002
+geqo_main	38dd3ae7d032eecc6ddadcbd402d90f6ac38f6a3	Bruce Momjian <bruce@momjian.us>	Sat Jul 20 04:59:10 2002 +0000	2002
+geqo_main	d84fe82230c593f3dc5d7f427849b99d1efa8a0a	Bruce Momjian <bruce@momjian.us>	Thu Jun 20 20:29:54 2002 +0000	2002
+geqo_main	a033daf5663944872080f1f52deb2ffcb40f4042	Bruce Momjian <bruce@momjian.us>	Sat Mar 2 21:39:36 2002 +0000	2002
+geqo_main	b81844b1738c584d92330a5ccd0fbd8b603d2886	Bruce Momjian <bruce@momjian.us>	Thu Oct 25 05:50:21 2001 +0000	2001
+geqo_main	12c1552066cac81a6b93062e8966cfa0d2d56af5	Peter Eisentraut <peter_e@gmx.net>	Sun Jun 3 14:53:56 2001 +0000	2001
+geqo_main	9e1552607a9dc6bc23e43d46770a9063ade4f3f0	Bruce Momjian <bruce@momjian.us>	Thu Mar 22 04:01:46 2001 +0000	2001
+geqo_main	623bf843d201438db1590906b4c39faf9d2e1c2a	Bruce Momjian <bruce@momjian.us>	Wed Jan 24 19:43:33 2001 +0000	2001
+geqo_main	3a94e789f5c9537d804210be3cb26f7fb08e3b9e	Tom Lane <tgl@sss.pgh.pa.us>	Fri Sep 29 18:21:41 2000 +0000	2000
+geqo_main	ba2ea6e0f5f270571e7f661cd2c7645160a9562a	Tom Lane <tgl@sss.pgh.pa.us>	Tue Sep 19 18:42:34 2000 +0000	2000
+geqo_main	9426047021651d8d7b6595c1377aef1909afcacd	Tom Lane <tgl@sss.pgh.pa.us>	Mon Aug 7 00:51:42 2000 +0000	2000
+geqo_main	1aebc3618a0be13451918581ad390ad9a3518702	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 28 03:33:33 2000 +0000	2000
+geqo_main	6a68f42648f54690ad5b5ae6fb9104e86e15f0f1	Peter Eisentraut <peter_e@gmx.net>	Wed May 31 00:28:42 2000 +0000	2000
+geqo_main	5c25d60244d3a4b458ba55d4f1e50386edb26507	Bruce Momjian <bruce@momjian.us>	Wed Jan 26 05:58:53 2000 +0000	2000
+geqo_main	a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+geqo_main	2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+geqo_main	4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+geqo_main	07842084fe3e11041f83563c851236395f481470	Bruce Momjian <bruce@momjian.us>	Tue May 25 16:15:34 1999 +0000	1999
+geqo_main	1332c1e14404407c9a106bf7096e8f58b16dc566	Tom Lane <tgl@sss.pgh.pa.us>	Mon May 17 00:25:34 1999 +0000	1999
+geqo_main	e78662d879dec9f5630637119333e99121ee03d3	Bruce Momjian <bruce@momjian.us>	Thu Feb 18 04:55:54 1999 +0000	1999
+geqo_main	6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+geqo_main	9322950aa44ef3647ccdd043cffe92cead171587	Bruce Momjian <bruce@momjian.us>	Wed Feb 3 21:18:02 1999 +0000	1999
+geqo_main	fa1a8d6a97068295fe30ac646aec7493a6305bc2	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 04:40:42 1998 +0000	1998
+geqo_main	af74855a608da4cd7ef88ceb2241ec1c75537f39	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 03:29:17 1998 +0000	1998
+geqo_main	2d32d909b559d7cc13cbcd09967c84277d9eeced	Bruce Momjian <bruce@momjian.us>	Mon Aug 10 02:26:40 1998 +0000	1998
+geqo_main	584f9438caef700f25596618141e29265f9595da	Bruce Momjian <bruce@momjian.us>	Sat Jul 18 04:22:52 1998 +0000	1998
+geqo_main	a32450a5855eed4bfd756ef292ee45d3c754665b	Bruce Momjian <bruce@momjian.us>	Thu Feb 26 04:46:47 1998 +0000	1998
+geqo_main	59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+geqo_main	319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+geqo_main	1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+geqo_main	71fd8d4a4ba7f1b050a026dfcba1fcdde32bb078	Marc G. Fournier <scrappy@hub.org>	Fri Mar 14 16:03:02 1997 +0000	1997
+geqo_main	ee6d3a73263c8b8d793ec8fb2f0d6ba2c4ba88e6	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 14:52:06 1997 +0000	1997
+geqo_main	29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+geqo_misc	c8e1ba736b2b9e8c98d37a5b77c4ed31baf94147	Bruce Momjian <bruce@momjian.us>	Mon Jan 2 15:00:37 2023 -0500	2023
+geqo_misc	27b77ecf9f4d5be211900eda54d8155ada50d696	Bruce Momjian <bruce@momjian.us>	Fri Jan 7 19:04:57 2022 -0500	2022
+geqo_misc	ca3b37487be333a1d241dab1bbdd17a211a88f43	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:06:25 2021 -0500	2021
+geqo_misc	7559d8ebfa11d98728e816f6b655582ce41150f3	Bruce Momjian <bruce@momjian.us>	Wed Jan 1 12:21:45 2020 -0500	2020
+geqo_misc	97c39498e5ca9208d3de5a443a2282923619bf91	Bruce Momjian <bruce@momjian.us>	Wed Jan 2 12:44:25 2019 -0500	2019
+geqo_misc	0b11a674fb11cc1571326c861ecdd7773d9e587f	Tom Lane <tgl@sss.pgh.pa.us>	Sun Apr 1 15:01:28 2018 -0400	2018
+geqo_misc	9d4649ca49416111aee2c84b7e4441a0b7aa2fac	Bruce Momjian <bruce@momjian.us>	Tue Jan 2 23:30:12 2018 -0500	2018
+geqo_misc	c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+geqo_misc	1d25779284fe1ba08ecd57e647292a9deb241376	Bruce Momjian <bruce@momjian.us>	Tue Jan 3 13:48:53 2017 -0500	2017
+geqo_misc	ee943004466418595363d567f18c053bae407792	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:33:40 2016 -0500	2016
+geqo_misc	4baaf863eca5412e07a8441b3b7e7482b7a8b21a	Bruce Momjian <bruce@momjian.us>	Tue Jan 6 11:43:47 2015 -0500	2015
+geqo_misc	7e04792a1cbd1763edf72474f6b1fbad2cd0ad31	Bruce Momjian <bruce@momjian.us>	Tue Jan 7 16:05:30 2014 -0500	2014
+geqo_misc	bd61a623ace3f3db8da1c7936416706968ae6ec2	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 17:15:01 2013 -0500	2013
+geqo_misc	e126958c2efdfc2d60b978d1fc7a780ff647e8ad	Bruce Momjian <bruce@momjian.us>	Sun Jan 1 18:01:58 2012 -0500	2012
+geqo_misc	5d950e3b0c75d65dd09f8ca5f76cd429a0aabbdc	Bruce Momjian <bruce@momjian.us>	Sat Jan 1 13:18:15 2011 -0500	2011
+geqo_misc	9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+geqo_misc	0239800893ef4901e3c085e06534934a485d3bf0	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 16:58:17 2010 +0000	2010
+geqo_misc	511db38ace2690f19816465baed07cefe535bfec	Bruce Momjian <bruce@momjian.us>	Thu Jan 1 17:24:05 2009 +0000	2009
+geqo_misc	9098ab9e327c2e6b0fece9e550d7d93663c60ff5	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 19:46:01 2008 +0000	2008
+geqo_misc	29dccf5fe0e98af9ce023299c4fe9776a52fd23d	Bruce Momjian <bruce@momjian.us>	Fri Jan 5 22:20:05 2007 +0000	2007
+geqo_misc	9b556322c580cf4037f33f1150c02794e0aa15cd	Tom Lane <tgl@sss.pgh.pa.us>	Sat Jul 15 03:35:21 2006 +0000	2006
+geqo_misc	e0522505bd13bc5aae993fc50b8f420665d78e96	Bruce Momjian <bruce@momjian.us>	Fri Jul 14 14:52:27 2006 +0000	2006
+geqo_misc	f2f5b05655afa80377757a2c335c01b28de24429	Bruce Momjian <bruce@momjian.us>	Sun Mar 5 15:59:11 2006 +0000	2006
+geqo_misc	1dc34982511d91ef8a2b71bdcb870f067c1b3da9	Bruce Momjian <bruce@momjian.us>	Sat Oct 15 02:49:52 2005 +0000	2005
+geqo_misc	2ff501590b323bde14f7e662fd89ad12a4d2f4e0	PostgreSQL Daemon <webmaster@postgresql.org>	Fri Dec 31 22:04:05 2004 +0000	2004
+geqo_misc	da9a8649d810826daf7868c6be9a4086c835c0ee	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 04:13:13 2004 +0000	2004
+geqo_misc	969685ad443637a24650909357e4e768a88412fc	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 19:52:15 2003 +0000	2003
+geqo_misc	f3c3deb7d003cad114696b0bf5e01b04bb5b8fd0	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 02:40:20 2003 +0000	2003
+geqo_misc	089003fb462fcce46c02bf47322b429f73c33c50	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 00:43:34 2003 +0000	2003
+geqo_misc	45708f5ebcee7df4e684d4fb5ae7b1856dfcefa1	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jul 25 00:01:09 2003 +0000	2003
+geqo_misc	9f76d0d926ffe72e32248b7c79f585c47e643981	Tom Lane <tgl@sss.pgh.pa.us>	Mon Dec 16 21:30:30 2002 +0000	2002
+geqo_misc	f6dba10e623fa575c8446f854aa63c97d4fedea3	Tom Lane <tgl@sss.pgh.pa.us>	Wed Nov 6 00:00:45 2002 +0000	2002
+geqo_misc	e50f52a074bdf0d6a9dc384840e641c4c0b0bb1a	Bruce Momjian <bruce@momjian.us>	Wed Sep 4 20:31:48 2002 +0000	2002
+geqo_misc	38dd3ae7d032eecc6ddadcbd402d90f6ac38f6a3	Bruce Momjian <bruce@momjian.us>	Sat Jul 20 04:59:10 2002 +0000	2002
+geqo_misc	d84fe82230c593f3dc5d7f427849b99d1efa8a0a	Bruce Momjian <bruce@momjian.us>	Thu Jun 20 20:29:54 2002 +0000	2002
+geqo_misc	857abb0e57baca9da39e338e75b92fef3ed812c5	Bruce Momjian <bruce@momjian.us>	Tue May 8 17:25:28 2001 +0000	2001
+geqo_misc	623bf843d201438db1590906b4c39faf9d2e1c2a	Bruce Momjian <bruce@momjian.us>	Wed Jan 24 19:43:33 2001 +0000	2001
+geqo_misc	a70e74b060ab2769523ad831f571cb80122121d3	Peter Eisentraut <peter_e@gmx.net>	Tue Nov 21 21:16:06 2000 +0000	2000
+geqo_misc	b1577a7c78d2d8880b3c0f94689fb75bd074c897	Tom Lane <tgl@sss.pgh.pa.us>	Tue Feb 15 20:49:31 2000 +0000	2000
+geqo_misc	d8733ce674f62f0e13cfc97d0340b43e1906f458	Tom Lane <tgl@sss.pgh.pa.us>	Mon Feb 7 04:41:04 2000 +0000	2000
+geqo_misc	5c25d60244d3a4b458ba55d4f1e50386edb26507	Bruce Momjian <bruce@momjian.us>	Wed Jan 26 05:58:53 2000 +0000	2000
+geqo_misc	166b5c1def56a8c43536ac64bd0ba92517f67765	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jan 9 00:26:47 2000 +0000	2000
+geqo_misc	e6381966c1886badbc19c94ac1f1ffbc104125ab	Tom Lane <tgl@sss.pgh.pa.us>	Mon Aug 16 02:17:58 1999 +0000	1999
+geqo_misc	3406901a2928627477374769416a32b01a08b131	Bruce Momjian <bruce@momjian.us>	Sat Jul 17 20:18:55 1999 +0000	1999
+geqo_misc	a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+geqo_misc	2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+geqo_misc	4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+geqo_misc	fcff1cdf4eadbc6dcba4b9a2cd09f38f466ffa31	Bruce Momjian <bruce@momjian.us>	Tue May 25 22:43:53 1999 +0000	1999
+geqo_misc	07842084fe3e11041f83563c851236395f481470	Bruce Momjian <bruce@momjian.us>	Tue May 25 16:15:34 1999 +0000	1999
+geqo_misc	6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+geqo_misc	ad4b27ac3f281401b7e8a717f100e403a222224d	Bruce Momjian <bruce@momjian.us>	Fri Feb 12 17:25:05 1999 +0000	1999
+geqo_misc	c0d17c7aee68bb73140d11dc03973157e6ca7e76	Bruce Momjian <bruce@momjian.us>	Fri Feb 12 06:43:53 1999 +0000	1999
+geqo_misc	9dbb0efb0be24c43012546cf5756866fc606af4b	Bruce Momjian <bruce@momjian.us>	Wed Feb 10 21:02:50 1999 +0000	1999
+geqo_misc	f859c81c18669d05ac53f2c1e0163c6b804fddd5	Bruce Momjian <bruce@momjian.us>	Wed Feb 10 03:52:54 1999 +0000	1999
+geqo_misc	8d9237d48510464dc03e8b00e7203927dc07c4d4	Bruce Momjian <bruce@momjian.us>	Wed Feb 3 20:15:53 1999 +0000	1999
+geqo_misc	fa1a8d6a97068295fe30ac646aec7493a6305bc2	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 04:40:42 1998 +0000	1998
+geqo_misc	af74855a608da4cd7ef88ceb2241ec1c75537f39	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 03:29:17 1998 +0000	1998
+geqo_misc	584f9438caef700f25596618141e29265f9595da	Bruce Momjian <bruce@momjian.us>	Sat Jul 18 04:22:52 1998 +0000	1998
+geqo_misc	6bd323c6b3f65b26273d5efb7ddd0ac04d039546	Bruce Momjian <bruce@momjian.us>	Mon Jun 15 19:30:31 1998 +0000	1998
+geqo_misc	679d39b9c8fbe8f5613879b11431d8152d85ec54	Bruce Momjian <bruce@momjian.us>	Wed Jan 7 21:07:04 1998 +0000	1998
+geqo_misc	0d9fc5afd6eda651d2ef0a4776e08f02d32a96de	Bruce Momjian <bruce@momjian.us>	Mon Jan 5 03:35:55 1998 +0000	1998
+geqo_misc	59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+geqo_misc	319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+geqo_misc	1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+geqo_misc	ee6d3a73263c8b8d793ec8fb2f0d6ba2c4ba88e6	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 14:52:06 1997 +0000	1997
+geqo_misc	29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+geqo_mutation	c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+geqo_mutation	9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05 2017 -0400	2017
+geqo_mutation	9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+geqo_mutation	f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+geqo_mutation	55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+geqo_mutation	a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+geqo_mutation	2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+geqo_mutation	4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+geqo_mutation	6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+geqo_mutation	59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+geqo_mutation	319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+geqo_mutation	1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+geqo_mutation	29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+geqo_ox1	24d2b2680a8d0e01b30ce8a41c4eb3b47aca5031	Alvaro Herrera <alvherre@alvh.no-ip.org>	Wed Apr 13 19:14:20 2022 +0200	2022
+geqo_ox1	21d304dfedb4f26d0d6587d9ac39b1b5c499bb55	Tom Lane <tgl@sss.pgh.pa.us>	Mon Aug 14 17:29:33 2017 -0400	2017
+geqo_ox1	c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+geqo_ox1	9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05 2017 -0400	2017
+geqo_ox1	9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+geqo_ox1	f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+geqo_ox1	55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+geqo_ox1	a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+geqo_ox1	2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+geqo_ox1	4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+geqo_ox1	6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+geqo_ox1	59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+geqo_ox1	319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+geqo_ox1	1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+geqo_ox1	71fd8d4a4ba7f1b050a026dfcba1fcdde32bb078	Marc G. Fournier <scrappy@hub.org>	Fri Mar 14 16:03:02 1997 +0000	1997
+geqo_ox2	24d2b2680a8d0e01b30ce8a41c4eb3b47aca5031	Alvaro Herrera <alvherre@alvh.no-ip.org>	Wed Apr 13 19:14:20 2022 +0200	2022
+geqo_ox2	21d304dfedb4f26d0d6587d9ac39b1b5c499bb55	Tom Lane <tgl@sss.pgh.pa.us>	Mon Aug 14 17:29:33 2017 -0400	2017
+geqo_ox2	c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+geqo_ox2	9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05 2017 -0400	2017
+geqo_ox2	9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+geqo_ox2	f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+geqo_ox2	a5d7ba773dff04d700afca6cf86bff64dc663b4f	Bruce Momjian <bruce@momjian.us>	Thu Oct 7 15:21:58 2004 +0000	2004
+geqo_ox2	55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+geqo_ox2	a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+geqo_ox2	2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+geqo_ox2	4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+geqo_ox2	6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+geqo_ox2	59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+geqo_ox2	319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+geqo_ox2	1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+geqo_ox2	71fd8d4a4ba7f1b050a026dfcba1fcdde32bb078	Marc G. Fournier <scrappy@hub.org>	Fri Mar 14 16:03:02 1997 +0000	1997
+geqo_pmx	24d2b2680a8d0e01b30ce8a41c4eb3b47aca5031	Alvaro Herrera <alvherre@alvh.no-ip.org>	Wed Apr 13 19:14:20 2022 +0200	2022
+geqo_pmx	c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+geqo_pmx	9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05 2017 -0400	2017
+geqo_pmx	9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+geqo_pmx	f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+geqo_pmx	55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+geqo_pmx	a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+geqo_pmx	2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+geqo_pmx	4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+geqo_pmx	0cf1b79528aa98fa7e0acfd60371251bd691cf5a	Bruce Momjian <bruce@momjian.us>	Wed Jul 14 01:20:30 1999 +0000	1999
+geqo_pmx	6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+geqo_pmx	59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+geqo_pmx	319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+geqo_pmx	1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+geqo_pmx	29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+geqo_pool	c8e1ba736b2b9e8c98d37a5b77c4ed31baf94147	Bruce Momjian <bruce@momjian.us>	Mon Jan 2 15:00:37 2023 -0500	2023
+geqo_pool	27b77ecf9f4d5be211900eda54d8155ada50d696	Bruce Momjian <bruce@momjian.us>	Fri Jan 7 19:04:57 2022 -0500	2022
+geqo_pool	ca3b37487be333a1d241dab1bbdd17a211a88f43	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:06:25 2021 -0500	2021
+geqo_pool	7559d8ebfa11d98728e816f6b655582ce41150f3	Bruce Momjian <bruce@momjian.us>	Wed Jan 1 12:21:45 2020 -0500	2020
+geqo_pool	97c39498e5ca9208d3de5a443a2282923619bf91	Bruce Momjian <bruce@momjian.us>	Wed Jan 2 12:44:25 2019 -0500	2019
+geqo_pool	9d4649ca49416111aee2c84b7e4441a0b7aa2fac	Bruce Momjian <bruce@momjian.us>	Tue Jan 2 23:30:12 2018 -0500	2018
+geqo_pool	c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+geqo_pool	1d25779284fe1ba08ecd57e647292a9deb241376	Bruce Momjian <bruce@momjian.us>	Tue Jan 3 13:48:53 2017 -0500	2017
+geqo_pool	ee943004466418595363d567f18c053bae407792	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:33:40 2016 -0500	2016
+geqo_pool	1a179f36f7c612d3560a72396c559cd876dfab6b	Tom Lane <tgl@sss.pgh.pa.us>	Tue Feb 10 20:37:19 2015 -0500	2015
+geqo_pool	4baaf863eca5412e07a8441b3b7e7482b7a8b21a	Bruce Momjian <bruce@momjian.us>	Tue Jan 6 11:43:47 2015 -0500	2015
+geqo_pool	7e04792a1cbd1763edf72474f6b1fbad2cd0ad31	Bruce Momjian <bruce@momjian.us>	Tue Jan 7 16:05:30 2014 -0500	2014
+geqo_pool	bd61a623ace3f3db8da1c7936416706968ae6ec2	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 17:15:01 2013 -0500	2013
+geqo_pool	e126958c2efdfc2d60b978d1fc7a780ff647e8ad	Bruce Momjian <bruce@momjian.us>	Sun Jan 1 18:01:58 2012 -0500	2012
+geqo_pool	5d950e3b0c75d65dd09f8ca5f76cd429a0aabbdc	Bruce Momjian <bruce@momjian.us>	Sat Jan 1 13:18:15 2011 -0500	2011
+geqo_pool	9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+geqo_pool	0239800893ef4901e3c085e06534934a485d3bf0	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 16:58:17 2010 +0000	2010
+geqo_pool	400e2c934457bef4bc3cc9a3e49b6289bd761bc0	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jul 19 21:00:43 2009 +0000	2009
+geqo_pool	f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+geqo_pool	511db38ace2690f19816465baed07cefe535bfec	Bruce Momjian <bruce@momjian.us>	Thu Jan 1 17:24:05 2009 +0000	2009
+geqo_pool	9098ab9e327c2e6b0fece9e550d7d93663c60ff5	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 19:46:01 2008 +0000	2008
+geqo_pool	29dccf5fe0e98af9ce023299c4fe9776a52fd23d	Bruce Momjian <bruce@momjian.us>	Fri Jan 5 22:20:05 2007 +0000	2007
+geqo_pool	e0522505bd13bc5aae993fc50b8f420665d78e96	Bruce Momjian <bruce@momjian.us>	Fri Jul 14 14:52:27 2006 +0000	2006
+geqo_pool	f2f5b05655afa80377757a2c335c01b28de24429	Bruce Momjian <bruce@momjian.us>	Sun Mar 5 15:59:11 2006 +0000	2006
+geqo_pool	436a2956d80db29ac1dff640b631620d856b4f70	Bruce Momjian <bruce@momjian.us>	Tue Nov 22 18:17:34 2005 +0000	2005
+geqo_pool	1dc34982511d91ef8a2b71bdcb870f067c1b3da9	Bruce Momjian <bruce@momjian.us>	Sat Oct 15 02:49:52 2005 +0000	2005
+geqo_pool	2ff501590b323bde14f7e662fd89ad12a4d2f4e0	PostgreSQL Daemon <webmaster@postgresql.org>	Fri Dec 31 22:04:05 2004 +0000	2004
+geqo_pool	b6b71b85bc45b49005b5aec87cba2c33fc8baf49	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 05:07:03 2004 +0000	2004
+geqo_pool	da9a8649d810826daf7868c6be9a4086c835c0ee	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 04:13:13 2004 +0000	2004
+geqo_pool	3969f2924bead7847adbe1fd736eefaf138af942	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jan 23 23:54:21 2004 +0000	2004
+geqo_pool	55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+geqo_pool	f3c3deb7d003cad114696b0bf5e01b04bb5b8fd0	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 02:40:20 2003 +0000	2003
+geqo_pool	d84fe82230c593f3dc5d7f427849b99d1efa8a0a	Bruce Momjian <bruce@momjian.us>	Thu Jun 20 20:29:54 2002 +0000	2002
+geqo_pool	623bf843d201438db1590906b4c39faf9d2e1c2a	Bruce Momjian <bruce@momjian.us>	Wed Jan 24 19:43:33 2001 +0000	2001
+geqo_pool	ba2ea6e0f5f270571e7f661cd2c7645160a9562a	Tom Lane <tgl@sss.pgh.pa.us>	Tue Sep 19 18:42:34 2000 +0000	2000
+geqo_pool	5c25d60244d3a4b458ba55d4f1e50386edb26507	Bruce Momjian <bruce@momjian.us>	Wed Jan 26 05:58:53 2000 +0000	2000
+geqo_pool	a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+geqo_pool	2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+geqo_pool	4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+geqo_pool	0cf1b79528aa98fa7e0acfd60371251bd691cf5a	Bruce Momjian <bruce@momjian.us>	Wed Jul 14 01:20:30 1999 +0000	1999
+geqo_pool	07842084fe3e11041f83563c851236395f481470	Bruce Momjian <bruce@momjian.us>	Tue May 25 16:15:34 1999 +0000	1999
+geqo_pool	6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+geqo_pool	9322950aa44ef3647ccdd043cffe92cead171587	Bruce Momjian <bruce@momjian.us>	Wed Feb 3 21:18:02 1999 +0000	1999
+geqo_pool	af74855a608da4cd7ef88ceb2241ec1c75537f39	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 03:29:17 1998 +0000	1998
+geqo_pool	6bd323c6b3f65b26273d5efb7ddd0ac04d039546	Bruce Momjian <bruce@momjian.us>	Mon Jun 15 19:30:31 1998 +0000	1998
+geqo_pool	645146260eb982655572277d948ae5ae0ad4a31f	Bruce Momjian <bruce@momjian.us>	Mon Apr 6 02:38:26 1998 +0000	1998
+geqo_pool	9a0dd4fb183958f59f68d8a5f096dd8df18d9b59	Bruce Momjian <bruce@momjian.us>	Mon Mar 30 16:47:35 1998 +0000	1998
+geqo_pool	a32450a5855eed4bfd756ef292ee45d3c754665b	Bruce Momjian <bruce@momjian.us>	Thu Feb 26 04:46:47 1998 +0000	1998
+geqo_pool	59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+geqo_pool	319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+geqo_pool	1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+geqo_pool	29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+geqo_px	24d2b2680a8d0e01b30ce8a41c4eb3b47aca5031	Alvaro Herrera <alvherre@alvh.no-ip.org>	Wed Apr 13 19:14:20 2022 +0200	2022
+geqo_px	21d304dfedb4f26d0d6587d9ac39b1b5c499bb55	Tom Lane <tgl@sss.pgh.pa.us>	Mon Aug 14 17:29:33 2017 -0400	2017
+geqo_px	c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+geqo_px	9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05 2017 -0400	2017
+geqo_px	9af4159fce6654aa0e081b00d02bca40b978745c	Bruce Momjian <bruce@momjian.us>	Wed May 29 16:58:43 2013 -0400	2013
+geqo_px	9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+geqo_px	f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+geqo_px	55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+geqo_px	a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+geqo_px	2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+geqo_px	4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+geqo_px	6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+geqo_px	6bd323c6b3f65b26273d5efb7ddd0ac04d039546	Bruce Momjian <bruce@momjian.us>	Mon Jun 15 19:30:31 1998 +0000	1998
+geqo_px	59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+geqo_px	319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+geqo_px	1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+geqo_px	29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+geqo_random	c8e1ba736b2b9e8c98d37a5b77c4ed31baf94147	Bruce Momjian <bruce@momjian.us>	Mon Jan 2 15:00:37 2023 -0500	2023
+geqo_random	27b77ecf9f4d5be211900eda54d8155ada50d696	Bruce Momjian <bruce@momjian.us>	Fri Jan 7 19:04:57 2022 -0500	2022
+geqo_random	3804539e48e794781c6145c7f988f5d507418fa8	Tom Lane <tgl@sss.pgh.pa.us>	Sun Nov 28 21:32:36 2021 -0500	2021
+geqo_random	ca3b37487be333a1d241dab1bbdd17a211a88f43	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:06:25 2021 -0500	2021
+geqo_random	7559d8ebfa11d98728e816f6b655582ce41150f3	Bruce Momjian <bruce@momjian.us>	Wed Jan 1 12:21:45 2020 -0500	2020
+geqo_random	97c39498e5ca9208d3de5a443a2282923619bf91	Bruce Momjian <bruce@momjian.us>	Wed Jan 2 12:44:25 2019 -0500	2019
+geqo_random	9d4649ca49416111aee2c84b7e4441a0b7aa2fac	Bruce Momjian <bruce@momjian.us>	Tue Jan 2 23:30:12 2018 -0500	2018
+geqo_random	1d25779284fe1ba08ecd57e647292a9deb241376	Bruce Momjian <bruce@momjian.us>	Tue Jan 3 13:48:53 2017 -0500	2017
+geqo_random	ee943004466418595363d567f18c053bae407792	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:33:40 2016 -0500	2016
+geqo_random	4baaf863eca5412e07a8441b3b7e7482b7a8b21a	Bruce Momjian <bruce@momjian.us>	Tue Jan 6 11:43:47 2015 -0500	2015
+geqo_random	7e04792a1cbd1763edf72474f6b1fbad2cd0ad31	Bruce Momjian <bruce@momjian.us>	Tue Jan 7 16:05:30 2014 -0500	2014
+geqo_random	bd61a623ace3f3db8da1c7936416706968ae6ec2	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 17:15:01 2013 -0500	2013
+geqo_random	e126958c2efdfc2d60b978d1fc7a780ff647e8ad	Bruce Momjian <bruce@momjian.us>	Sun Jan 1 18:01:58 2012 -0500	2012
+geqo_random	4af43ee3f165c8e4b332a7e680a44f4b7ba2d3c1	Robert Haas <rhaas@postgresql.org>	Wed Aug 3 16:26:40 2011 -0400	2011
+geqo_random	5d950e3b0c75d65dd09f8ca5f76cd429a0aabbdc	Bruce Momjian <bruce@momjian.us>	Sat Jan 1 13:18:15 2011 -0500	2011
+geqo_random	9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+geqo_random	65e806cba1f0f154d51caa7478e7192ce58d1056	Bruce Momjian <bruce@momjian.us>	Fri Feb 26 02:01:40 2010 +0000	2010
+geqo_random	0239800893ef4901e3c085e06534934a485d3bf0	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 16:58:17 2010 +0000	2010
+geqo_random	f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+geqo_recombination	21d304dfedb4f26d0d6587d9ac39b1b5c499bb55	Tom Lane <tgl@sss.pgh.pa.us>	Mon Aug 14 17:29:33 2017 -0400	2017
+geqo_recombination	c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+geqo_recombination	9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05 2017 -0400	2017
+geqo_recombination	59464bd6f928ad0da30502cbe9b54baec9ca2c69	Tom Lane <tgl@sss.pgh.pa.us>	Thu Nov 5 10:46:14 2015 -0500	2015
+geqo_recombination	9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+geqo_recombination	400e2c934457bef4bc3cc9a3e49b6289bd761bc0	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jul 19 21:00:43 2009 +0000	2009
+geqo_recombination	f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+geqo_recombination	1dc34982511d91ef8a2b71bdcb870f067c1b3da9	Bruce Momjian <bruce@momjian.us>	Sat Oct 15 02:49:52 2005 +0000	2005
+geqo_recombination	b6b71b85bc45b49005b5aec87cba2c33fc8baf49	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 05:07:03 2004 +0000	2004
+geqo_recombination	3969f2924bead7847adbe1fd736eefaf138af942	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jan 23 23:54:21 2004 +0000	2004
+geqo_recombination	55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+geqo_recombination	a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+geqo_recombination	2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+geqo_recombination	4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+geqo_recombination	0cf1b79528aa98fa7e0acfd60371251bd691cf5a	Bruce Momjian <bruce@momjian.us>	Wed Jul 14 01:20:30 1999 +0000	1999
+geqo_recombination	6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+geqo_recombination	af74855a608da4cd7ef88ceb2241ec1c75537f39	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 03:29:17 1998 +0000	1998
+geqo_recombination	a32450a5855eed4bfd756ef292ee45d3c754665b	Bruce Momjian <bruce@momjian.us>	Thu Feb 26 04:46:47 1998 +0000	1998
+geqo_recombination	59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+geqo_recombination	319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+geqo_recombination	1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+geqo_recombination	29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+geqo_selection	c8e1ba736b2b9e8c98d37a5b77c4ed31baf94147	Bruce Momjian <bruce@momjian.us>	Mon Jan 2 15:00:37 2023 -0500	2023
+geqo_selection	a601366a460f68472bf70c4d94c57baa0a3ed1b2	Peter Geoghegan <pg@bowt.ie>	Tue Sep 20 13:09:30 2022 -0700	2022
+geqo_selection	27b77ecf9f4d5be211900eda54d8155ada50d696	Bruce Momjian <bruce@momjian.us>	Fri Jan 7 19:04:57 2022 -0500	2022
+geqo_selection	3804539e48e794781c6145c7f988f5d507418fa8	Tom Lane <tgl@sss.pgh.pa.us>	Sun Nov 28 21:32:36 2021 -0500	2021
+geqo_selection	ca3b37487be333a1d241dab1bbdd17a211a88f43	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:06:25 2021 -0500	2021
+geqo_selection	7559d8ebfa11d98728e816f6b655582ce41150f3	Bruce Momjian <bruce@momjian.us>	Wed Jan 1 12:21:45 2020 -0500	2020
+geqo_selection	8548ddc61b5858b6466e69f66a6b1a7ea9daef06	Michael Paquier <michael@paquier.xyz>	Mon Aug 5 12:14:58 2019 +0900	2019
+geqo_selection	97c39498e5ca9208d3de5a443a2282923619bf91	Bruce Momjian <bruce@momjian.us>	Wed Jan 2 12:44:25 2019 -0500	2019
+geqo_selection	9d4649ca49416111aee2c84b7e4441a0b7aa2fac	Bruce Momjian <bruce@momjian.us>	Tue Jan 2 23:30:12 2018 -0500	2018
+geqo_selection	1d25779284fe1ba08ecd57e647292a9deb241376	Bruce Momjian <bruce@momjian.us>	Tue Jan 3 13:48:53 2017 -0500	2017
+geqo_selection	ee943004466418595363d567f18c053bae407792	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:33:40 2016 -0500	2016
+geqo_selection	4baaf863eca5412e07a8441b3b7e7482b7a8b21a	Bruce Momjian <bruce@momjian.us>	Tue Jan 6 11:43:47 2015 -0500	2015
+geqo_selection	7e04792a1cbd1763edf72474f6b1fbad2cd0ad31	Bruce Momjian <bruce@momjian.us>	Tue Jan 7 16:05:30 2014 -0500	2014
+geqo_selection	bd61a623ace3f3db8da1c7936416706968ae6ec2	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 17:15:01 2013 -0500	2013
+geqo_selection	927d61eeff78363ea3938c818d07e511ebaf75cf	Bruce Momjian <bruce@momjian.us>	Sun Jun 10 15:20:04 2012 -0400	2012
+geqo_selection	e126958c2efdfc2d60b978d1fc7a780ff647e8ad	Bruce Momjian <bruce@momjian.us>	Sun Jan 1 18:01:58 2012 -0500	2012
+geqo_selection	4af43ee3f165c8e4b332a7e680a44f4b7ba2d3c1	Robert Haas <rhaas@postgresql.org>	Wed Aug 3 16:26:40 2011 -0400	2011
+geqo_selection	5d950e3b0c75d65dd09f8ca5f76cd429a0aabbdc	Bruce Momjian <bruce@momjian.us>	Sat Jan 1 13:18:15 2011 -0500	2011
+geqo_selection	9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+geqo_selection	0239800893ef4901e3c085e06534934a485d3bf0	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 16:58:17 2010 +0000	2010
+geqo_selection	655473a7cd3903d2ce75054468c855d5c294aaf9	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jul 24 15:03:07 2009 +0000	2009
+geqo_selection	f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+geqo_selection	511db38ace2690f19816465baed07cefe535bfec	Bruce Momjian <bruce@momjian.us>	Thu Jan 1 17:24:05 2009 +0000	2009
+geqo_selection	9098ab9e327c2e6b0fece9e550d7d93663c60ff5	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 19:46:01 2008 +0000	2008
+geqo_selection	29dccf5fe0e98af9ce023299c4fe9776a52fd23d	Bruce Momjian <bruce@momjian.us>	Fri Jan 5 22:20:05 2007 +0000	2007
+geqo_selection	f2f5b05655afa80377757a2c335c01b28de24429	Bruce Momjian <bruce@momjian.us>	Sun Mar 5 15:59:11 2006 +0000	2006
+geqo_selection	1dc34982511d91ef8a2b71bdcb870f067c1b3da9	Bruce Momjian <bruce@momjian.us>	Sat Oct 15 02:49:52 2005 +0000	2005
+geqo_selection	1265724ff5abb1dcf468cb33153ae1326426d7a6	Tom Lane <tgl@sss.pgh.pa.us>	Tue Jun 14 14:21:16 2005 +0000	2005
+geqo_selection	2ff501590b323bde14f7e662fd89ad12a4d2f4e0	PostgreSQL Daemon <webmaster@postgresql.org>	Fri Dec 31 22:04:05 2004 +0000	2004
+geqo_selection	da9a8649d810826daf7868c6be9a4086c835c0ee	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 04:13:13 2004 +0000	2004
+geqo_selection	55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+geqo_selection	f3c3deb7d003cad114696b0bf5e01b04bb5b8fd0	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 02:40:20 2003 +0000	2003
+geqo_selection	52c9d259335c9670f6487c5f40fc53b57a4c7b17	Tom Lane <tgl@sss.pgh.pa.us>	Thu Sep 5 00:43:07 2002 +0000	2002
+geqo_selection	d84fe82230c593f3dc5d7f427849b99d1efa8a0a	Bruce Momjian <bruce@momjian.us>	Thu Jun 20 20:29:54 2002 +0000	2002
+geqo_selection	623bf843d201438db1590906b4c39faf9d2e1c2a	Bruce Momjian <bruce@momjian.us>	Wed Jan 24 19:43:33 2001 +0000	2001
+geqo_selection	5c25d60244d3a4b458ba55d4f1e50386edb26507	Bruce Momjian <bruce@momjian.us>	Wed Jan 26 05:58:53 2000 +0000	2000
+geqo_selection	a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+geqo_selection	2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+geqo_selection	4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+geqo_selection	6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+geqo_selection	9322950aa44ef3647ccdd043cffe92cead171587	Bruce Momjian <bruce@momjian.us>	Wed Feb 3 21:18:02 1999 +0000	1999
+geqo_selection	af74855a608da4cd7ef88ceb2241ec1c75537f39	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 03:29:17 1998 +0000	1998
+geqo_selection	59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+geqo_selection	319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+geqo_selection	1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+geqo_selection	29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+\.
+
+
+--
+-- Data for Name: gitlog_geqo_copy; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.gitlog_geqo_copy (commit, author, date, year) FROM stdin;
+c8e1ba736b2b9e8c98d37a5b77c4ed31baf94147	Bruce Momjian <bruce@momjian.us>	Mon Jan 2 15:00:37 2023 -0500	2023
+27b77ecf9f4d5be211900eda54d8155ada50d696	Bruce Momjian <bruce@momjian.us>	Fri Jan 7 19:04:57 2022 -0500	2022
+ca3b37487be333a1d241dab1bbdd17a211a88f43	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:06:25 2021 -0500	2021
+7559d8ebfa11d98728e816f6b655582ce41150f3	Bruce Momjian <bruce@momjian.us>	Wed Jan 1 12:21:45 2020 -0500	2020
+97c39498e5ca9208d3de5a443a2282923619bf91	Bruce Momjian <bruce@momjian.us>	Wed Jan 2 12:44:25 2019 -0500	2019
+9d4649ca49416111aee2c84b7e4441a0b7aa2fac	Bruce Momjian <bruce@momjian.us>	Tue Jan 2 23:30:12 2018 -0500	2018
+1d25779284fe1ba08ecd57e647292a9deb241376	Bruce Momjian <bruce@momjian.us>	Tue Jan 3 13:48:53 2017 -0500	2017
+ee943004466418595363d567f18c053bae407792	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:33:40 2016 -0500	2016
+4baaf863eca5412e07a8441b3b7e7482b7a8b21a	Bruce Momjian <bruce@momjian.us>	Tue Jan 6 11:43:47 2015 -0500	2015
+7e04792a1cbd1763edf72474f6b1fbad2cd0ad31	Bruce Momjian <bruce@momjian.us>	Tue Jan 7 16:05:30 2014 -0500	2014
+bd61a623ace3f3db8da1c7936416706968ae6ec2	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 17:15:01 2013 -0500	2013
+e126958c2efdfc2d60b978d1fc7a780ff647e8ad	Bruce Momjian <bruce@momjian.us>	Sun Jan 1 18:01:58 2012 -0500	2012
+5d950e3b0c75d65dd09f8ca5f76cd429a0aabbdc	Bruce Momjian <bruce@momjian.us>	Sat Jan 1 13:18:15 2011 -0500	2011
+9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+0239800893ef4901e3c085e06534934a485d3bf0	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 16:58:17 2010 +0000	2010
+f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+511db38ace2690f19816465baed07cefe535bfec	Bruce Momjian <bruce@momjian.us>	Thu Jan 1 17:24:05 2009 +0000	2009
+9098ab9e327c2e6b0fece9e550d7d93663c60ff5	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 19:46:01 2008 +0000	2008
+29dccf5fe0e98af9ce023299c4fe9776a52fd23d	Bruce Momjian <bruce@momjian.us>	Fri Jan 5 22:20:05 2007 +0000	2007
+f2f5b05655afa80377757a2c335c01b28de24429	Bruce Momjian <bruce@momjian.us>	Sun Mar 5 15:59:11 2006 +0000	2006
+2ff501590b323bde14f7e662fd89ad12a4d2f4e0	PostgreSQL Daemon <webmaster@postgresql.org>	Fri Dec 31 22:04:05 2004 +0000	2004
+da9a8649d810826daf7868c6be9a4086c835c0ee	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 04:13:13 2004 +0000	2004
+55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+f3c3deb7d003cad114696b0bf5e01b04bb5b8fd0	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 02:40:20 2003 +0000	2003
+d84fe82230c593f3dc5d7f427849b99d1efa8a0a	Bruce Momjian <bruce@momjian.us>	Thu Jun 20 20:29:54 2002 +0000	2002
+623bf843d201438db1590906b4c39faf9d2e1c2a	Bruce Momjian <bruce@momjian.us>	Wed Jan 24 19:43:33 2001 +0000	2001
+5c25d60244d3a4b458ba55d4f1e50386edb26507	Bruce Momjian <bruce@momjian.us>	Wed Jan 26 05:58:53 2000 +0000	2000
+a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+\.
+
+
+--
+-- Data for Name: gitlog_geqo_cx; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.gitlog_geqo_cx (commit, author, date, year) FROM stdin;
+24d2b2680a8d0e01b30ce8a41c4eb3b47aca5031	Alvaro Herrera <alvherre@alvh.no-ip.org>	Wed Apr 13 19:14:20 2022 +0200	2022
+14aec03502302eff6c67981d8fd121175c436ce9	Amit Kapila <akapila@postgresql.org>	Tue Nov 12 08:30:16 2019 +0530	2019
+21d304dfedb4f26d0d6587d9ac39b1b5c499bb55	Tom Lane <tgl@sss.pgh.pa.us>	Mon Aug 14 17:29:33 2017 -0400	2017
+c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05 2017 -0400	2017
+9af4159fce6654aa0e081b00d02bca40b978745c	Bruce Momjian <bruce@momjian.us>	Wed May 29 16:58:43 2013 -0400	2013
+9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+af74855a608da4cd7ef88ceb2241ec1c75537f39	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 03:29:17 1998 +0000	1998
+59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+\.
+
+
+--
+-- Data for Name: gitlog_geqo_erx; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.gitlog_geqo_erx (commit, author, date, year) FROM stdin;
+f14aad5169baa5e2ac25d49f1d18f9d5cb3bc7f2	Peter Eisentraut <peter@eisentraut.org>	Fri Oct 7 13:28:38  2022 +0200	2022
+24d2b2680a8d0e01b30ce8a41c4eb3b47aca5031	Alvaro Herrera <alvherre@alvh.no-ip.org>	Wed Apr 13 19:14:20 2022 +0200	2022
+14aec03502302eff6c67981d8fd121175c436ce9	Amit Kapila <akapila@postgresql.org>	Tue Nov 12 08:30:16 2019 +0530	2019
+c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05  2017 -0400	2017
+a47b38c9ee4960556b0edb76a42171bd281cc1cf	Peter Eisentraut <peter_e@gmx.net>	Tue Mar 14 12:57:10 2017 -0400	2017
+181bdb90ba1f2361aec5a621c8f1e01736f8cad2	Heikki Linnakangas <heikki.linnakangas@iki.fi>	Mon Feb 6 11:33:58  2017 +0200	2017
+2e3ca04e2ee711cf8b87030b04f257316d990bde	Andres Freund <andres@anarazel.de>	Sun Apr 26 19:05:39 2015 +0200	2015
+9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+1dc34982511d91ef8a2b71bdcb870f067c1b3da9	Bruce Momjian <bruce@momjian.us>	Sat Oct 15 02:49:52 2005 +0000	2005
+55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+45708f5ebcee7df4e684d4fb5ae7b1856dfcefa1	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jul 25 00:01:09 2003 +0000	2003
+a033daf5663944872080f1f52deb2ffcb40f4042	Bruce Momjian <bruce@momjian.us>	Sat Mar 2 21:39:36  2002 +0000	2002
+b81844b1738c584d92330a5ccd0fbd8b603d2886	Bruce Momjian <bruce@momjian.us>	Thu Oct 25 05:50:21 2001 +0000	2001
+a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+0cf1b79528aa98fa7e0acfd60371251bd691cf5a	Bruce Momjian <bruce@momjian.us>	Wed Jul 14 01:20:30 1999 +0000	1999
+6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+af74855a608da4cd7ef88ceb2241ec1c75537f39	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 03:29:17  1998 +0000	1998
+6bd323c6b3f65b26273d5efb7ddd0ac04d039546	Bruce Momjian <bruce@momjian.us>	Mon Jun 15 19:30:31 1998 +0000	1998
+a32450a5855eed4bfd756ef292ee45d3c754665b	Bruce Momjian <bruce@momjian.us>	Thu Feb 26 04:46:47 1998 +0000	1998
+679d39b9c8fbe8f5613879b11431d8152d85ec54	Bruce Momjian <bruce@momjian.us>	Wed Jan 7 21:07:04  1998 +0000	1998
+0d9fc5afd6eda651d2ef0a4776e08f02d32a96de	Bruce Momjian <bruce@momjian.us>	Mon Jan 5 03:35:55  1998 +0000	1998
+59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23  1997 +0000	1997
+319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22  1997 +0000	1997
+1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48  1997 +0000	1997
+f50b103ce1b0aca3f63d47865dcf6f89ded158e5	Marc G. Fournier <scrappy@hub.org>	Fri Jun 6 00:37:23  1997 +0000	1997
+29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+\.
+
+
+--
+-- Data for Name: gitlog_geqo_eval; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.gitlog_geqo_eval (commit, author, date, year) FROM stdin;
+2489d76c4906f4461a364ca8ad7e0751ead8aa0d	Tom Lane <tgl@sss.pgh.pa.us>	Mon Jan 30 13:16:20 2023 -0500	2023
+c8e1ba736b2b9e8c98d37a5b77c4ed31baf94147	Bruce Momjian <bruce@momjian.us>	Mon Jan 2 15:00:37 2023 -0500	2023
+d8e34fa7a18fab4aa8eb010edac133d63ecc11c6	Tom Lane <tgl@sss.pgh.pa.us>	Sat Jul 30 13:05:15 2022 -0400	2022
+27b77ecf9f4d5be211900eda54d8155ada50d696	Bruce Momjian <bruce@momjian.us>	Fri Jan 7 19:04:57 2022 -0500	2022
+ca3b37487be333a1d241dab1bbdd17a211a88f43	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:06:25 2021 -0500	2021
+ba3e76cc571eba3dea19c9465ff15ac3ac186576	Tomas Vondra <tomas.vondra@postgresql.org>	Tue Apr 7 16:43:18 2020 +0200	2020
+7559d8ebfa11d98728e816f6b655582ce41150f3	Bruce Momjian <bruce@momjian.us>	Wed Jan 1 12:21:45 2020 -0500	2020
+c245776906b065fcd59831a25c3b24ad3ddcd849	Tom Lane <tgl@sss.pgh.pa.us>	Tue Jul 16 13:12:24 2019 -0400	2019
+1cff1b95ab6ddae32faa3efe0d95a820dbfdc164	Tom Lane <tgl@sss.pgh.pa.us>	Mon Jul 15 13:41:58 2019 -0400	2019
+8255c7a5eeba8f1a38b7a431c04909bde4f5e67d	Tom Lane <tgl@sss.pgh.pa.us>	Wed May 22 13:04:48 2019 -0400	2019
+97c39498e5ca9208d3de5a443a2282923619bf91	Bruce Momjian <bruce@momjian.us>	Wed Jan 2 12:44:25 2019 -0500	2019
+3f90ec8597c3515e0d3190613b31491686027e4b	Robert Haas <rhaas@postgresql.org>	Mon Mar 12 16:45:15 2018 -0400	2018
+3bf05e096b9f8375e640c5d7996aa57efd7f240c	Robert Haas <rhaas@postgresql.org>	Mon Feb 26 09:30:12 2018 -0500	2018
+2fb1abaeb016aeb45b9e6d0b81b7a7e92bb251b9	Peter Eisentraut <peter_e@gmx.net>	Fri Feb 16 10:33:59 2018 -0500	2018
+9d4649ca49416111aee2c84b7e4441a0b7aa2fac	Bruce Momjian <bruce@momjian.us>	Tue Jan 2 23:30:12 2018 -0500	2018
+f49842d1ee31b976c681322f76025d7732e860f3	Robert Haas <rhaas@postgresql.org>	Fri Oct 6 11:11:10 2017 -0400	2017
+1d25779284fe1ba08ecd57e647292a9deb241376	Bruce Momjian <bruce@momjian.us>	Tue Jan 3 13:48:53 2017 -0500	2017
+ea268cdc9a2631da4a5748b00059a9fd43470d0e	Tom Lane <tgl@sss.pgh.pa.us>	Sat Aug 27 17:50:38 2016 -0400	2016
+c45bf5751b6338488bd79ce777210285531da373	Tom Lane <tgl@sss.pgh.pa.us>	Sat Apr 30 12:29:21 2016 -0400	2016
+ee943004466418595363d567f18c053bae407792	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:33:40 2016 -0500	2016
+1a179f36f7c612d3560a72396c559cd876dfab6b	Tom Lane <tgl@sss.pgh.pa.us>	Tue Feb 10 20:37:19 2015 -0500	2015
+4baaf863eca5412e07a8441b3b7e7482b7a8b21a	Bruce Momjian <bruce@momjian.us>	Tue Jan 6 11:43:47 2015 -0500	2015
+0a7832005792fa6dad171f9cadb8d587fe0dd800	Bruce Momjian <bruce@momjian.us>	Tue May 6 12:12:18 2014 -0400	2014
+7e04792a1cbd1763edf72474f6b1fbad2cd0ad31	Bruce Momjian <bruce@momjian.us>	Tue Jan 7 16:05:30 2014 -0500	2014
+bd61a623ace3f3db8da1c7936416706968ae6ec2	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 17:15:01 2013 -0500	2013
+e83bb10d6dcf05a666d4ada00d9788c7974ad378	Tom Lane <tgl@sss.pgh.pa.us>	Wed Aug 29 22:05:27 2012 -0400	2012
+5ebaaa49445eb1ba7b299bbea3a477d4e4c0430b	Tom Lane <tgl@sss.pgh.pa.us>	Tue Aug 7 19:02:54 2012 -0400	2012
+e126958c2efdfc2d60b978d1fc7a780ff647e8ad	Bruce Momjian <bruce@momjian.us>	Sun Jan 1 18:01:58 2012 -0500	2012
+5d950e3b0c75d65dd09f8ca5f76cd429a0aabbdc	Bruce Momjian <bruce@momjian.us>	Sat Jan 1 13:18:15 2011 -0500	2011
+9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+65e806cba1f0f154d51caa7478e7192ce58d1056	Bruce Momjian <bruce@momjian.us>	Fri Feb 26 02:01:40 2010 +0000	2010
+0239800893ef4901e3c085e06534934a485d3bf0	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 16:58:17 2010 +0000	2010
+1a95f12702b4e535b5e26ed9c3fcd0b2a1b1a20f	Tom Lane <tgl@sss.pgh.pa.us>	Sat Nov 28 00:46:19 2009 +0000	2009
+400e2c934457bef4bc3cc9a3e49b6289bd761bc0	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jul 19 21:00:43 2009 +0000	2009
+f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+511db38ace2690f19816465baed07cefe535bfec	Bruce Momjian <bruce@momjian.us>	Thu Jan 1 17:24:05 2009 +0000	2009
+9098ab9e327c2e6b0fece9e550d7d93663c60ff5	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 19:46:01 2008 +0000	2008
+fdf5a5efb7b28c13085fe7313658de8d7b9914f6	Bruce Momjian <bruce@momjian.us>	Thu Nov 15 21:14:46 2007 +0000	2007
+6bef118b01ec541440fccf8ce3641fd025297de0	Tom Lane <tgl@sss.pgh.pa.us>	Fri Feb 16 00:14:01 2007 +0000	2007
+c17117649b9ae23d5290c9626090dcaae333ea59	Tom Lane <tgl@sss.pgh.pa.us>	Tue Feb 13 02:31:03 2007 +0000	2007
+29dccf5fe0e98af9ce023299c4fe9776a52fd23d	Bruce Momjian <bruce@momjian.us>	Fri Jan 5 22:20:05 2007 +0000	2007
+f18c57fdf1dd255cc26c4b6b3d6716c8a54ab890	Tom Lane <tgl@sss.pgh.pa.us>	Tue Dec 12 21:31:02 2006 +0000	2006
+4df8de7a682e98be2b9072458bb9e77513f53c47	Tom Lane <tgl@sss.pgh.pa.us>	Tue Oct 24 17:50:22 2006 +0000	2006
+f2f5b05655afa80377757a2c335c01b28de24429	Bruce Momjian <bruce@momjian.us>	Sun Mar 5 15:59:11 2006 +0000	2006
+e3b9852728902bc816bf02574a87eda9a0ca91a1	Tom Lane <tgl@sss.pgh.pa.us>	Tue Dec 20 02:30:36 2005 +0000	2005
+436a2956d80db29ac1dff640b631620d856b4f70	Bruce Momjian <bruce@momjian.us>	Tue Nov 22 18:17:34 2005 +0000	2005
+1dc34982511d91ef8a2b71bdcb870f067c1b3da9	Bruce Momjian <bruce@momjian.us>	Sat Oct 15 02:49:52 2005 +0000	2005
+a31ad27fc5dc32a1453233575b3cf7b5c34cf515	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jun 9 04:19:00 2005 +0000	2005
+e3a33a9a9f1a6afb80c9b83c1456c1a36fbcb70b	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 8 23:02:05 2005 +0000	2005
+9ab4d98168407c3436d3f0e02d32720b0d9075a0	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 5 22:32:58 2005 +0000	2005
+2ff501590b323bde14f7e662fd89ad12a4d2f4e0	PostgreSQL Daemon <webmaster@postgresql.org>	Fri Dec 31 22:04:05 2004 +0000	2004
+dd29fc2f61e91df8d5879b2dfd02bbabafa182ff	Tom Lane <tgl@sss.pgh.pa.us>	Wed Dec 15 21:13:34 2004 +0000	2004
+b6b71b85bc45b49005b5aec87cba2c33fc8baf49	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 05:07:03 2004 +0000	2004
+da9a8649d810826daf7868c6be9a4086c835c0ee	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 04:13:13 2004 +0000	2004
+72b6ad6313387110cb36b69a3732cd0936c3eba4	Neil Conway <neilc@samurai.com>	Sun May 30 23:40:41 2004 +0000	2004
+d0b4399d81f39decccb23fa38f772b71b51bf96a	Neil Conway <neilc@samurai.com>	Wed May 26 04:41:50 2004 +0000	2004
+3969f2924bead7847adbe1fd736eefaf138af942	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jan 23 23:54:21 2004 +0000	2004
+969685ad443637a24650909357e4e768a88412fc	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 19:52:15 2003 +0000	2003
+f3c3deb7d003cad114696b0bf5e01b04bb5b8fd0	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 02:40:20 2003 +0000	2003
+089003fb462fcce46c02bf47322b429f73c33c50	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 00:43:34 2003 +0000	2003
+45708f5ebcee7df4e684d4fb5ae7b1856dfcefa1	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jul 25 00:01:09 2003 +0000	2003
+de28dc9a04c4df5d711815b7a518501b43535a26	Tom Lane <tgl@sss.pgh.pa.us>	Fri May 2 20:54:36 2003 +0000	2003
+bdfbfde1b168b3332c4cdac34ac86a80aaf4d442	Tom Lane <tgl@sss.pgh.pa.us>	Mon Jan 20 18:55:07 2003 +0000	2003
+9f76d0d926ffe72e32248b7c79f585c47e643981	Tom Lane <tgl@sss.pgh.pa.us>	Mon Dec 16 21:30:30 2002 +0000	2002
+d84fe82230c593f3dc5d7f427849b99d1efa8a0a	Bruce Momjian <bruce@momjian.us>	Thu Jun 20 20:29:54 2002 +0000	2002
+9e1552607a9dc6bc23e43d46770a9063ade4f3f0	Bruce Momjian <bruce@momjian.us>	Thu Mar 22 04:01:46 2001 +0000	2001
+623bf843d201438db1590906b4c39faf9d2e1c2a	Bruce Momjian <bruce@momjian.us>	Wed Jan 24 19:43:33 2001 +0000	2001
+5088f0748a39c3f480d9a9c1b34c2a25d3011611	Bruce Momjian <bruce@momjian.us>	Wed Jan 17 17:26:45 2001 +0000	2001
+ba2ea6e0f5f270571e7f661cd2c7645160a9562a	Tom Lane <tgl@sss.pgh.pa.us>	Tue Sep 19 18:42:34 2000 +0000	2000
+ed5003c58401e5727fcdd970505972394c95febb	Tom Lane <tgl@sss.pgh.pa.us>	Tue Sep 12 21:07:18 2000 +0000	2000
+87cdaf5491ea6d9e2701bb2b557d64c80c7de4e0	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jul 28 02:13:52 2000 +0000	2000
+cb292206c5c160cde6eb5618de64f810e62f378a	Peter Eisentraut <peter_e@gmx.net>	Wed Jul 12 22:59:15 2000 +0000	2000
+1aebc3618a0be13451918581ad390ad9a3518702	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 28 03:33:33 2000 +0000	2000
+a12a23f0d03cc8bf22c6c38bc2394753ec34fcdf	Bruce Momjian <bruce@momjian.us>	Tue May 30 00:49:57 2000 +0000	2000
+52f77df613cea1803ce86321c37229626d9f213c	Bruce Momjian <bruce@momjian.us>	Wed Apr 12 17:17:23 2000 +0000	2000
+b1577a7c78d2d8880b3c0f94689fb75bd074c897	Tom Lane <tgl@sss.pgh.pa.us>	Tue Feb 15 20:49:31 2000 +0000	2000
+d8733ce674f62f0e13cfc97d0340b43e1906f458	Tom Lane <tgl@sss.pgh.pa.us>	Mon Feb 7 04:41:04 2000 +0000	2000
+5c25d60244d3a4b458ba55d4f1e50386edb26507	Bruce Momjian <bruce@momjian.us>	Wed Jan 26 05:58:53 2000 +0000	2000
+166b5c1def56a8c43536ac64bd0ba92517f67765	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jan 9 00:26:47 2000 +0000	2000
+ad604ac372fc777afbe06184a134a92639c0c8a4	Bruce Momjian <bruce@momjian.us>	Tue Sep 21 20:58:25 1999 +0000	1999
+e6381966c1886badbc19c94ac1f1ffbc104125ab	Tom Lane <tgl@sss.pgh.pa.us>	Mon Aug 16 02:17:58 1999 +0000	1999
+a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+fcff1cdf4eadbc6dcba4b9a2cd09f38f466ffa31	Bruce Momjian <bruce@momjian.us>	Tue May 25 22:43:53 1999 +0000	1999
+07842084fe3e11041f83563c851236395f481470	Bruce Momjian <bruce@momjian.us>	Tue May 25 16:15:34 1999 +0000	1999
+1332c1e14404407c9a106bf7096e8f58b16dc566	Tom Lane <tgl@sss.pgh.pa.us>	Mon May 17 00:25:34 1999 +0000	1999
+f2ed835baf0f9d4d77df312a58550eb64b63eee7	Tom Lane <tgl@sss.pgh.pa.us>	Sun May 16 19:45:00 1999 +0000	1999
+65ccd1039a50fd3a4a89d4efd0d726a363ec7876	Bruce Momjian <bruce@momjian.us>	Thu Feb 18 05:26:34 1999 +0000	1999
+e78662d879dec9f5630637119333e99121ee03d3	Bruce Momjian <bruce@momjian.us>	Thu Feb 18 04:55:54 1999 +0000	1999
+c82ca4c15828abdecf0ec5343d7f39b4f3a475f9	Bruce Momjian <bruce@momjian.us>	Tue Feb 16 00:41:03 1999 +0000	1999
+ba2883b264d7bc392604bc9f76abfc30de89f5f8	Bruce Momjian <bruce@momjian.us>	Mon Feb 15 03:22:37 1999 +0000	1999
+944d3c395e292c213c1a2be617af1b8473299b1b	Tom Lane <tgl@sss.pgh.pa.us>	Mon Feb 15 02:04:58 1999 +0000	1999
+61aa8258769d5b63d03931188aceb96de1273e16	Bruce Momjian <bruce@momjian.us>	Sun Feb 14 04:57:02 1999 +0000	1999
+6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+3fdb9bb9c74afa79f574438cbbf5178d30463bb6	Bruce Momjian <bruce@momjian.us>	Fri Feb 12 05:57:08 1999 +0000	1999
+9dbb0efb0be24c43012546cf5756866fc606af4b	Bruce Momjian <bruce@momjian.us>	Wed Feb 10 21:02:50 1999 +0000	1999
+9322950aa44ef3647ccdd043cffe92cead171587	Bruce Momjian <bruce@momjian.us>	Wed Feb 3 21:18:02 1999 +0000	1999
+8d9237d48510464dc03e8b00e7203927dc07c4d4	Bruce Momjian <bruce@momjian.us>	Wed Feb 3 20:15:53 1999 +0000	1999
+fa1a8d6a97068295fe30ac646aec7493a6305bc2	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 04:40:42 1998 +0000	1998
+af74855a608da4cd7ef88ceb2241ec1c75537f39	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 03:29:17 1998 +0000	1998
+2d32d909b559d7cc13cbcd09967c84277d9eeced	Bruce Momjian <bruce@momjian.us>	Mon Aug 10 02:26:40 1998 +0000	1998
+d9be0ff432fe4df419a19fe8319ea6fe6c96e00f	Bruce Momjian <bruce@momjian.us>	Tue Aug 4 16:44:31 1998 +0000	1998
+584f9438caef700f25596618141e29265f9595da	Bruce Momjian <bruce@momjian.us>	Sat Jul 18 04:22:52 1998 +0000	1998
+6bd323c6b3f65b26273d5efb7ddd0ac04d039546	Bruce Momjian <bruce@momjian.us>	Mon Jun 15 19:30:31 1998 +0000	1998
+a32450a5855eed4bfd756ef292ee45d3c754665b	Bruce Momjian <bruce@momjian.us>	Thu Feb 26 04:46:47 1998 +0000	1998
+679d39b9c8fbe8f5613879b11431d8152d85ec54	Bruce Momjian <bruce@momjian.us>	Wed Jan 7 21:07:04 1998 +0000	1998
+0d9fc5afd6eda651d2ef0a4776e08f02d32a96de	Bruce Momjian <bruce@momjian.us>	Mon Jan 5 03:35:55 1998 +0000	1998
+59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+ea5b5357cdc79c7742c035032f5500e4a97a6d55	Bruce Momjian <bruce@momjian.us>	Tue Aug 12 22:55:25 1997 +0000	1997
+cbb4213af460c9112c2b74b3051809caac38322a	Vadim B. Mikheev <vadim4o@yahoo.com>	Tue Jun 10 07:53:55 1997 +0000	1997
+e3d2f1f35d478eaabf4cd08b64967266760498ec	Vadim B. Mikheev <vadim4o@yahoo.com>	Fri Jun 6 03:18:02 1997 +0000	1997
+c0178f27a252128f96316a6c260a15c28960f510	Marc G. Fournier <scrappy@hub.org>	Fri Jun 6 00:38:17 1997 +0000	1997
+1c688d1bbe9e48234a6b2a6a6558ac441e26997e	Marc G. Fournier <scrappy@hub.org>	Wed Apr 9 08:31:29 1997 +0000	1997
+9d5c0af5862cc0141ea16ca90a9e01250716af37	Marc G. Fournier <scrappy@hub.org>	Thu Apr 3 19:56:47 1997 +0000	1997
+ed8b7bdff9a7ab05ed7e34f575a3802b7cc3e51b	Marc G. Fournier <scrappy@hub.org>	Mon Mar 3 23:26:45 1997 +0000	1997
+a3a956bfe549cb94d9909bf2d6a24a67cb23be6f	Bruce Momjian <bruce@momjian.us>	Sat Mar 1 22:22:21 1997 +0000	1997
+ee6d3a73263c8b8d793ec8fb2f0d6ba2c4ba88e6	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 14:52:06 1997 +0000	1997
+950c57600e72b28760c35b1c0fc2b371a106fa54	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 14:29:22 1997 +0000	1997
+517c8db8695e62afee438599a0c0da8f888b7490	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 14:26:42 1997 +0000	1997
+29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+\.
+
+
+--
+-- Data for Name: gitlog_geqo_main; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.gitlog_geqo_main (commit, author, date, year) FROM stdin;
+c8e1ba736b2b9e8c98d37a5b77c4ed31baf94147	Bruce Momjian <bruce@momjian.us>	Mon Jan 2 15:00:37 2023 -0500	2023
+dc43fc9b3aa3e0fa9c84faddad6d301813580f88	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jan 23 11:09:00 2022 -0500	2022
+27b77ecf9f4d5be211900eda54d8155ada50d696	Bruce Momjian <bruce@momjian.us>	Fri Jan 7 19:04:57 2022 -0500	2022
+ca3b37487be333a1d241dab1bbdd17a211a88f43	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:06:25 2021 -0500	2021
+7559d8ebfa11d98728e816f6b655582ce41150f3	Bruce Momjian <bruce@momjian.us>	Wed Jan 1 12:21:45 2020 -0500	2020
+97c39498e5ca9208d3de5a443a2282923619bf91	Bruce Momjian <bruce@momjian.us>	Wed Jan 2 12:44:25 2019 -0500	2019
+9d4649ca49416111aee2c84b7e4441a0b7aa2fac	Bruce Momjian <bruce@momjian.us>	Tue Jan 2 23:30:12 2018 -0500	2018
+9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05 2017 -0400	2017
+1d25779284fe1ba08ecd57e647292a9deb241376	Bruce Momjian <bruce@momjian.us>	Tue Jan 3 13:48:53 2017 -0500	2017
+ee943004466418595363d567f18c053bae407792	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:33:40 2016 -0500	2016
+1a179f36f7c612d3560a72396c559cd876dfab6b	Tom Lane <tgl@sss.pgh.pa.us>	Tue Feb 10 20:37:19 2015 -0500	2015
+4baaf863eca5412e07a8441b3b7e7482b7a8b21a	Bruce Momjian <bruce@momjian.us>	Tue Jan 6 11:43:47 2015 -0500	2015
+7e04792a1cbd1763edf72474f6b1fbad2cd0ad31	Bruce Momjian <bruce@momjian.us>	Tue Jan 7 16:05:30 2014 -0500	2014
+bd61a623ace3f3db8da1c7936416706968ae6ec2	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 17:15:01 2013 -0500	2013
+e126958c2efdfc2d60b978d1fc7a780ff647e8ad	Bruce Momjian <bruce@momjian.us>	Sun Jan 1 18:01:58 2012 -0500	2012
+6560407c7db2c7e32926a46f5fb52175ac10d9e5	Bruce Momjian <bruce@momjian.us>	Thu Jun 9 14:32:50 2011 -0400	2011
+5caa3479c2efd31fca1b271db687e5e57c7de2d4	Peter Eisentraut <peter_e@gmx.net>	Mon Apr 11 22:28:45 2011 +0300	2011
+5d950e3b0c75d65dd09f8ca5f76cd429a0aabbdc	Bruce Momjian <bruce@momjian.us>	Sat Jan 1 13:18:15 2011 -0500	2011
+9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+0239800893ef4901e3c085e06534934a485d3bf0	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 16:58:17 2010 +0000	2010
+400e2c934457bef4bc3cc9a3e49b6289bd761bc0	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jul 19 21:00:43 2009 +0000	2009
+f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+511db38ace2690f19816465baed07cefe535bfec	Bruce Momjian <bruce@momjian.us>	Thu Jan 1 17:24:05 2009 +0000	2009
+9098ab9e327c2e6b0fece9e550d7d93663c60ff5	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 19:46:01 2008 +0000	2008
+29dccf5fe0e98af9ce023299c4fe9776a52fd23d	Bruce Momjian <bruce@momjian.us>	Fri Jan 5 22:20:05 2007 +0000	2007
+e0522505bd13bc5aae993fc50b8f420665d78e96	Bruce Momjian <bruce@momjian.us>	Fri Jul 14 14:52:27 2006 +0000	2006
+f2f5b05655afa80377757a2c335c01b28de24429	Bruce Momjian <bruce@momjian.us>	Sun Mar 5 15:59:11 2006 +0000	2006
+1dc34982511d91ef8a2b71bdcb870f067c1b3da9	Bruce Momjian <bruce@momjian.us>	Sat Oct 15 02:49:52 2005 +0000	2005
+e3a33a9a9f1a6afb80c9b83c1456c1a36fbcb70b	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 8 23:02:05 2005 +0000	2005
+9ab4d98168407c3436d3f0e02d32720b0d9075a0	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 5 22:32:58 2005 +0000	2005
+2ff501590b323bde14f7e662fd89ad12a4d2f4e0	PostgreSQL Daemon <webmaster@postgresql.org>	Fri Dec 31 22:04:05 2004 +0000	2004
+b6b71b85bc45b49005b5aec87cba2c33fc8baf49	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 05:07:03 2004 +0000	2004
+da9a8649d810826daf7868c6be9a4086c835c0ee	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 04:13:13 2004 +0000	2004
+921d749bd4c34c3349f1c254d5faa2f1cec03911	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jun 3 02:08:07 2004 +0000	2004
+63bd0db12199c5df043e1dea0f2b574f622b3a4c	Tom Lane <tgl@sss.pgh.pa.us>	Fri May 21 05:08:06 2004 +0000	2004
+3969f2924bead7847adbe1fd736eefaf138af942	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jan 23 23:54:21 2004 +0000	2004
+672a80702824dafd7dfb6151c6d519dded320032	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jan 21 23:33:34 2004 +0000	2004
+969685ad443637a24650909357e4e768a88412fc	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 19:52:15 2003 +0000	2003
+48beecda7cbd2e73ebc11c88d3567ad064604bda	Tom Lane <tgl@sss.pgh.pa.us>	Sun Sep 7 15:26:54 2003 +0000	2003
+fcb90fdc95c690a88727a79e9feb687fa6d6c3b9	Tom Lane <tgl@sss.pgh.pa.us>	Tue Aug 12 18:23:21 2003 +0000	2003
+f3c3deb7d003cad114696b0bf5e01b04bb5b8fd0	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 02:40:20 2003 +0000	2003
+089003fb462fcce46c02bf47322b429f73c33c50	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 00:43:34 2003 +0000	2003
+45708f5ebcee7df4e684d4fb5ae7b1856dfcefa1	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jul 25 00:01:09 2003 +0000	2003
+98b6f37e47a9eb3540493caabf57d0f952ebdc6d	Bruce Momjian <bruce@momjian.us>	Tue May 27 17:49:47 2003 +0000	2003
+bdfbfde1b168b3332c4cdac34ac86a80aaf4d442	Tom Lane <tgl@sss.pgh.pa.us>	Mon Jan 20 18:55:07 2003 +0000	2003
+9f76d0d926ffe72e32248b7c79f585c47e643981	Tom Lane <tgl@sss.pgh.pa.us>	Mon Dec 16 21:30:30 2002 +0000	2002
+38dd3ae7d032eecc6ddadcbd402d90f6ac38f6a3	Bruce Momjian <bruce@momjian.us>	Sat Jul 20 04:59:10 2002 +0000	2002
+d84fe82230c593f3dc5d7f427849b99d1efa8a0a	Bruce Momjian <bruce@momjian.us>	Thu Jun 20 20:29:54 2002 +0000	2002
+a033daf5663944872080f1f52deb2ffcb40f4042	Bruce Momjian <bruce@momjian.us>	Sat Mar 2 21:39:36 2002 +0000	2002
+b81844b1738c584d92330a5ccd0fbd8b603d2886	Bruce Momjian <bruce@momjian.us>	Thu Oct 25 05:50:21 2001 +0000	2001
+12c1552066cac81a6b93062e8966cfa0d2d56af5	Peter Eisentraut <peter_e@gmx.net>	Sun Jun 3 14:53:56 2001 +0000	2001
+9e1552607a9dc6bc23e43d46770a9063ade4f3f0	Bruce Momjian <bruce@momjian.us>	Thu Mar 22 04:01:46 2001 +0000	2001
+623bf843d201438db1590906b4c39faf9d2e1c2a	Bruce Momjian <bruce@momjian.us>	Wed Jan 24 19:43:33 2001 +0000	2001
+3a94e789f5c9537d804210be3cb26f7fb08e3b9e	Tom Lane <tgl@sss.pgh.pa.us>	Fri Sep 29 18:21:41 2000 +0000	2000
+ba2ea6e0f5f270571e7f661cd2c7645160a9562a	Tom Lane <tgl@sss.pgh.pa.us>	Tue Sep 19 18:42:34 2000 +0000	2000
+9426047021651d8d7b6595c1377aef1909afcacd	Tom Lane <tgl@sss.pgh.pa.us>	Mon Aug 7 00:51:42 2000 +0000	2000
+1aebc3618a0be13451918581ad390ad9a3518702	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 28 03:33:33 2000 +0000	2000
+6a68f42648f54690ad5b5ae6fb9104e86e15f0f1	Peter Eisentraut <peter_e@gmx.net>	Wed May 31 00:28:42 2000 +0000	2000
+5c25d60244d3a4b458ba55d4f1e50386edb26507	Bruce Momjian <bruce@momjian.us>	Wed Jan 26 05:58:53 2000 +0000	2000
+a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+07842084fe3e11041f83563c851236395f481470	Bruce Momjian <bruce@momjian.us>	Tue May 25 16:15:34 1999 +0000	1999
+1332c1e14404407c9a106bf7096e8f58b16dc566	Tom Lane <tgl@sss.pgh.pa.us>	Mon May 17 00:25:34 1999 +0000	1999
+e78662d879dec9f5630637119333e99121ee03d3	Bruce Momjian <bruce@momjian.us>	Thu Feb 18 04:55:54 1999 +0000	1999
+6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+9322950aa44ef3647ccdd043cffe92cead171587	Bruce Momjian <bruce@momjian.us>	Wed Feb 3 21:18:02 1999 +0000	1999
+fa1a8d6a97068295fe30ac646aec7493a6305bc2	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 04:40:42 1998 +0000	1998
+af74855a608da4cd7ef88ceb2241ec1c75537f39	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 03:29:17 1998 +0000	1998
+2d32d909b559d7cc13cbcd09967c84277d9eeced	Bruce Momjian <bruce@momjian.us>	Mon Aug 10 02:26:40 1998 +0000	1998
+584f9438caef700f25596618141e29265f9595da	Bruce Momjian <bruce@momjian.us>	Sat Jul 18 04:22:52 1998 +0000	1998
+a32450a5855eed4bfd756ef292ee45d3c754665b	Bruce Momjian <bruce@momjian.us>	Thu Feb 26 04:46:47 1998 +0000	1998
+59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+71fd8d4a4ba7f1b050a026dfcba1fcdde32bb078	Marc G. Fournier <scrappy@hub.org>	Fri Mar 14 16:03:02 1997 +0000	1997
+ee6d3a73263c8b8d793ec8fb2f0d6ba2c4ba88e6	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 14:52:06 1997 +0000	1997
+29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+\.
+
+
+--
+-- Data for Name: gitlog_geqo_misc; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.gitlog_geqo_misc (commit, author, date, year) FROM stdin;
+c8e1ba736b2b9e8c98d37a5b77c4ed31baf94147	Bruce Momjian <bruce@momjian.us>	Mon Jan 2 15:00:37 2023 -0500	2023
+27b77ecf9f4d5be211900eda54d8155ada50d696	Bruce Momjian <bruce@momjian.us>	Fri Jan 7 19:04:57 2022 -0500	2022
+ca3b37487be333a1d241dab1bbdd17a211a88f43	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:06:25 2021 -0500	2021
+7559d8ebfa11d98728e816f6b655582ce41150f3	Bruce Momjian <bruce@momjian.us>	Wed Jan 1 12:21:45 2020 -0500	2020
+97c39498e5ca9208d3de5a443a2282923619bf91	Bruce Momjian <bruce@momjian.us>	Wed Jan 2 12:44:25 2019 -0500	2019
+0b11a674fb11cc1571326c861ecdd7773d9e587f	Tom Lane <tgl@sss.pgh.pa.us>	Sun Apr 1 15:01:28 2018 -0400	2018
+9d4649ca49416111aee2c84b7e4441a0b7aa2fac	Bruce Momjian <bruce@momjian.us>	Tue Jan 2 23:30:12 2018 -0500	2018
+c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+1d25779284fe1ba08ecd57e647292a9deb241376	Bruce Momjian <bruce@momjian.us>	Tue Jan 3 13:48:53 2017 -0500	2017
+ee943004466418595363d567f18c053bae407792	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:33:40 2016 -0500	2016
+4baaf863eca5412e07a8441b3b7e7482b7a8b21a	Bruce Momjian <bruce@momjian.us>	Tue Jan 6 11:43:47 2015 -0500	2015
+7e04792a1cbd1763edf72474f6b1fbad2cd0ad31	Bruce Momjian <bruce@momjian.us>	Tue Jan 7 16:05:30 2014 -0500	2014
+bd61a623ace3f3db8da1c7936416706968ae6ec2	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 17:15:01 2013 -0500	2013
+e126958c2efdfc2d60b978d1fc7a780ff647e8ad	Bruce Momjian <bruce@momjian.us>	Sun Jan 1 18:01:58 2012 -0500	2012
+5d950e3b0c75d65dd09f8ca5f76cd429a0aabbdc	Bruce Momjian <bruce@momjian.us>	Sat Jan 1 13:18:15 2011 -0500	2011
+9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+0239800893ef4901e3c085e06534934a485d3bf0	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 16:58:17 2010 +0000	2010
+511db38ace2690f19816465baed07cefe535bfec	Bruce Momjian <bruce@momjian.us>	Thu Jan 1 17:24:05 2009 +0000	2009
+9098ab9e327c2e6b0fece9e550d7d93663c60ff5	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 19:46:01 2008 +0000	2008
+29dccf5fe0e98af9ce023299c4fe9776a52fd23d	Bruce Momjian <bruce@momjian.us>	Fri Jan 5 22:20:05 2007 +0000	2007
+9b556322c580cf4037f33f1150c02794e0aa15cd	Tom Lane <tgl@sss.pgh.pa.us>	Sat Jul 15 03:35:21 2006 +0000	2006
+e0522505bd13bc5aae993fc50b8f420665d78e96	Bruce Momjian <bruce@momjian.us>	Fri Jul 14 14:52:27 2006 +0000	2006
+f2f5b05655afa80377757a2c335c01b28de24429	Bruce Momjian <bruce@momjian.us>	Sun Mar 5 15:59:11 2006 +0000	2006
+1dc34982511d91ef8a2b71bdcb870f067c1b3da9	Bruce Momjian <bruce@momjian.us>	Sat Oct 15 02:49:52 2005 +0000	2005
+2ff501590b323bde14f7e662fd89ad12a4d2f4e0	PostgreSQL Daemon <webmaster@postgresql.org>	Fri Dec 31 22:04:05 2004 +0000	2004
+da9a8649d810826daf7868c6be9a4086c835c0ee	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 04:13:13 2004 +0000	2004
+969685ad443637a24650909357e4e768a88412fc	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 19:52:15 2003 +0000	2003
+f3c3deb7d003cad114696b0bf5e01b04bb5b8fd0	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 02:40:20 2003 +0000	2003
+089003fb462fcce46c02bf47322b429f73c33c50	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 00:43:34 2003 +0000	2003
+45708f5ebcee7df4e684d4fb5ae7b1856dfcefa1	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jul 25 00:01:09 2003 +0000	2003
+9f76d0d926ffe72e32248b7c79f585c47e643981	Tom Lane <tgl@sss.pgh.pa.us>	Mon Dec 16 21:30:30 2002 +0000	2002
+f6dba10e623fa575c8446f854aa63c97d4fedea3	Tom Lane <tgl@sss.pgh.pa.us>	Wed Nov 6 00:00:45 2002 +0000	2002
+e50f52a074bdf0d6a9dc384840e641c4c0b0bb1a	Bruce Momjian <bruce@momjian.us>	Wed Sep 4 20:31:48 2002 +0000	2002
+38dd3ae7d032eecc6ddadcbd402d90f6ac38f6a3	Bruce Momjian <bruce@momjian.us>	Sat Jul 20 04:59:10 2002 +0000	2002
+d84fe82230c593f3dc5d7f427849b99d1efa8a0a	Bruce Momjian <bruce@momjian.us>	Thu Jun 20 20:29:54 2002 +0000	2002
+857abb0e57baca9da39e338e75b92fef3ed812c5	Bruce Momjian <bruce@momjian.us>	Tue May 8 17:25:28 2001 +0000	2001
+623bf843d201438db1590906b4c39faf9d2e1c2a	Bruce Momjian <bruce@momjian.us>	Wed Jan 24 19:43:33 2001 +0000	2001
+a70e74b060ab2769523ad831f571cb80122121d3	Peter Eisentraut <peter_e@gmx.net>	Tue Nov 21 21:16:06 2000 +0000	2000
+b1577a7c78d2d8880b3c0f94689fb75bd074c897	Tom Lane <tgl@sss.pgh.pa.us>	Tue Feb 15 20:49:31 2000 +0000	2000
+d8733ce674f62f0e13cfc97d0340b43e1906f458	Tom Lane <tgl@sss.pgh.pa.us>	Mon Feb 7 04:41:04 2000 +0000	2000
+5c25d60244d3a4b458ba55d4f1e50386edb26507	Bruce Momjian <bruce@momjian.us>	Wed Jan 26 05:58:53 2000 +0000	2000
+166b5c1def56a8c43536ac64bd0ba92517f67765	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jan 9 00:26:47 2000 +0000	2000
+e6381966c1886badbc19c94ac1f1ffbc104125ab	Tom Lane <tgl@sss.pgh.pa.us>	Mon Aug 16 02:17:58 1999 +0000	1999
+3406901a2928627477374769416a32b01a08b131	Bruce Momjian <bruce@momjian.us>	Sat Jul 17 20:18:55 1999 +0000	1999
+a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+fcff1cdf4eadbc6dcba4b9a2cd09f38f466ffa31	Bruce Momjian <bruce@momjian.us>	Tue May 25 22:43:53 1999 +0000	1999
+07842084fe3e11041f83563c851236395f481470	Bruce Momjian <bruce@momjian.us>	Tue May 25 16:15:34 1999 +0000	1999
+6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+ad4b27ac3f281401b7e8a717f100e403a222224d	Bruce Momjian <bruce@momjian.us>	Fri Feb 12 17:25:05 1999 +0000	1999
+c0d17c7aee68bb73140d11dc03973157e6ca7e76	Bruce Momjian <bruce@momjian.us>	Fri Feb 12 06:43:53 1999 +0000	1999
+9dbb0efb0be24c43012546cf5756866fc606af4b	Bruce Momjian <bruce@momjian.us>	Wed Feb 10 21:02:50 1999 +0000	1999
+f859c81c18669d05ac53f2c1e0163c6b804fddd5	Bruce Momjian <bruce@momjian.us>	Wed Feb 10 03:52:54 1999 +0000	1999
+8d9237d48510464dc03e8b00e7203927dc07c4d4	Bruce Momjian <bruce@momjian.us>	Wed Feb 3 20:15:53 1999 +0000	1999
+fa1a8d6a97068295fe30ac646aec7493a6305bc2	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 04:40:42 1998 +0000	1998
+af74855a608da4cd7ef88ceb2241ec1c75537f39	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 03:29:17 1998 +0000	1998
+584f9438caef700f25596618141e29265f9595da	Bruce Momjian <bruce@momjian.us>	Sat Jul 18 04:22:52 1998 +0000	1998
+6bd323c6b3f65b26273d5efb7ddd0ac04d039546	Bruce Momjian <bruce@momjian.us>	Mon Jun 15 19:30:31 1998 +0000	1998
+679d39b9c8fbe8f5613879b11431d8152d85ec54	Bruce Momjian <bruce@momjian.us>	Wed Jan 7 21:07:04 1998 +0000	1998
+0d9fc5afd6eda651d2ef0a4776e08f02d32a96de	Bruce Momjian <bruce@momjian.us>	Mon Jan 5 03:35:55 1998 +0000	1998
+59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+ee6d3a73263c8b8d793ec8fb2f0d6ba2c4ba88e6	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 14:52:06 1997 +0000	1997
+29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+\.
+
+
+--
+-- Data for Name: gitlog_geqo_mutation; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.gitlog_geqo_mutation (commit, author, date, year) FROM stdin;
+c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05 2017 -0400	2017
+9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+\.
+
+
+--
+-- Data for Name: gitlog_geqo_ox1; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.gitlog_geqo_ox1 (commit, author, date, year) FROM stdin;
+24d2b2680a8d0e01b30ce8a41c4eb3b47aca5031	Alvaro Herrera <alvherre@alvh.no-ip.org>	Wed Apr 13 19:14:20 2022 +0200	2022
+21d304dfedb4f26d0d6587d9ac39b1b5c499bb55	Tom Lane <tgl@sss.pgh.pa.us>	Mon Aug 14 17:29:33 2017 -0400	2017
+c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05 2017 -0400	2017
+9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+71fd8d4a4ba7f1b050a026dfcba1fcdde32bb078	Marc G. Fournier <scrappy@hub.org>	Fri Mar 14 16:03:02 1997 +0000	1997
+\.
+
+
+--
+-- Data for Name: gitlog_geqo_ox2; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.gitlog_geqo_ox2 (commit, author, date, year) FROM stdin;
+24d2b2680a8d0e01b30ce8a41c4eb3b47aca5031	Alvaro Herrera <alvherre@alvh.no-ip.org>	Wed Apr 13 19:14:20 2022 +0200	2022
+21d304dfedb4f26d0d6587d9ac39b1b5c499bb55	Tom Lane <tgl@sss.pgh.pa.us>	Mon Aug 14 17:29:33 2017 -0400	2017
+c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05 2017 -0400	2017
+9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+a5d7ba773dff04d700afca6cf86bff64dc663b4f	Bruce Momjian <bruce@momjian.us>	Thu Oct 7 15:21:58 2004 +0000	2004
+55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+71fd8d4a4ba7f1b050a026dfcba1fcdde32bb078	Marc G. Fournier <scrappy@hub.org>	Fri Mar 14 16:03:02 1997 +0000	1997
+\.
+
+
+--
+-- Data for Name: gitlog_geqo_pmx; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.gitlog_geqo_pmx (commit, author, date, year) FROM stdin;
+24d2b2680a8d0e01b30ce8a41c4eb3b47aca5031	Alvaro Herrera <alvherre@alvh.no-ip.org>	Wed Apr 13 19:14:20 2022 +0200	2022
+c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05 2017 -0400	2017
+9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+0cf1b79528aa98fa7e0acfd60371251bd691cf5a	Bruce Momjian <bruce@momjian.us>	Wed Jul 14 01:20:30 1999 +0000	1999
+6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+\.
+
+
+--
+-- Data for Name: gitlog_geqo_pool; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.gitlog_geqo_pool (commit, author, date, year) FROM stdin;
+c8e1ba736b2b9e8c98d37a5b77c4ed31baf94147	Bruce Momjian <bruce@momjian.us>	Mon Jan 2 15:00:37 2023 -0500	2023
+27b77ecf9f4d5be211900eda54d8155ada50d696	Bruce Momjian <bruce@momjian.us>	Fri Jan 7 19:04:57 2022 -0500	2022
+ca3b37487be333a1d241dab1bbdd17a211a88f43	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:06:25 2021 -0500	2021
+7559d8ebfa11d98728e816f6b655582ce41150f3	Bruce Momjian <bruce@momjian.us>	Wed Jan 1 12:21:45 2020 -0500	2020
+97c39498e5ca9208d3de5a443a2282923619bf91	Bruce Momjian <bruce@momjian.us>	Wed Jan 2 12:44:25 2019 -0500	2019
+9d4649ca49416111aee2c84b7e4441a0b7aa2fac	Bruce Momjian <bruce@momjian.us>	Tue Jan 2 23:30:12 2018 -0500	2018
+c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+1d25779284fe1ba08ecd57e647292a9deb241376	Bruce Momjian <bruce@momjian.us>	Tue Jan 3 13:48:53 2017 -0500	2017
+ee943004466418595363d567f18c053bae407792	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:33:40 2016 -0500	2016
+1a179f36f7c612d3560a72396c559cd876dfab6b	Tom Lane <tgl@sss.pgh.pa.us>	Tue Feb 10 20:37:19 2015 -0500	2015
+4baaf863eca5412e07a8441b3b7e7482b7a8b21a	Bruce Momjian <bruce@momjian.us>	Tue Jan 6 11:43:47 2015 -0500	2015
+7e04792a1cbd1763edf72474f6b1fbad2cd0ad31	Bruce Momjian <bruce@momjian.us>	Tue Jan 7 16:05:30 2014 -0500	2014
+bd61a623ace3f3db8da1c7936416706968ae6ec2	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 17:15:01 2013 -0500	2013
+e126958c2efdfc2d60b978d1fc7a780ff647e8ad	Bruce Momjian <bruce@momjian.us>	Sun Jan 1 18:01:58 2012 -0500	2012
+5d950e3b0c75d65dd09f8ca5f76cd429a0aabbdc	Bruce Momjian <bruce@momjian.us>	Sat Jan 1 13:18:15 2011 -0500	2011
+9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+0239800893ef4901e3c085e06534934a485d3bf0	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 16:58:17 2010 +0000	2010
+400e2c934457bef4bc3cc9a3e49b6289bd761bc0	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jul 19 21:00:43 2009 +0000	2009
+f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+511db38ace2690f19816465baed07cefe535bfec	Bruce Momjian <bruce@momjian.us>	Thu Jan 1 17:24:05 2009 +0000	2009
+9098ab9e327c2e6b0fece9e550d7d93663c60ff5	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 19:46:01 2008 +0000	2008
+29dccf5fe0e98af9ce023299c4fe9776a52fd23d	Bruce Momjian <bruce@momjian.us>	Fri Jan 5 22:20:05 2007 +0000	2007
+e0522505bd13bc5aae993fc50b8f420665d78e96	Bruce Momjian <bruce@momjian.us>	Fri Jul 14 14:52:27 2006 +0000	2006
+f2f5b05655afa80377757a2c335c01b28de24429	Bruce Momjian <bruce@momjian.us>	Sun Mar 5 15:59:11 2006 +0000	2006
+436a2956d80db29ac1dff640b631620d856b4f70	Bruce Momjian <bruce@momjian.us>	Tue Nov 22 18:17:34 2005 +0000	2005
+1dc34982511d91ef8a2b71bdcb870f067c1b3da9	Bruce Momjian <bruce@momjian.us>	Sat Oct 15 02:49:52 2005 +0000	2005
+2ff501590b323bde14f7e662fd89ad12a4d2f4e0	PostgreSQL Daemon <webmaster@postgresql.org>	Fri Dec 31 22:04:05 2004 +0000	2004
+b6b71b85bc45b49005b5aec87cba2c33fc8baf49	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 05:07:03 2004 +0000	2004
+da9a8649d810826daf7868c6be9a4086c835c0ee	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 04:13:13 2004 +0000	2004
+3969f2924bead7847adbe1fd736eefaf138af942	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jan 23 23:54:21 2004 +0000	2004
+55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+f3c3deb7d003cad114696b0bf5e01b04bb5b8fd0	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 02:40:20 2003 +0000	2003
+d84fe82230c593f3dc5d7f427849b99d1efa8a0a	Bruce Momjian <bruce@momjian.us>	Thu Jun 20 20:29:54 2002 +0000	2002
+623bf843d201438db1590906b4c39faf9d2e1c2a	Bruce Momjian <bruce@momjian.us>	Wed Jan 24 19:43:33 2001 +0000	2001
+ba2ea6e0f5f270571e7f661cd2c7645160a9562a	Tom Lane <tgl@sss.pgh.pa.us>	Tue Sep 19 18:42:34 2000 +0000	2000
+5c25d60244d3a4b458ba55d4f1e50386edb26507	Bruce Momjian <bruce@momjian.us>	Wed Jan 26 05:58:53 2000 +0000	2000
+a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+0cf1b79528aa98fa7e0acfd60371251bd691cf5a	Bruce Momjian <bruce@momjian.us>	Wed Jul 14 01:20:30 1999 +0000	1999
+07842084fe3e11041f83563c851236395f481470	Bruce Momjian <bruce@momjian.us>	Tue May 25 16:15:34 1999 +0000	1999
+6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+9322950aa44ef3647ccdd043cffe92cead171587	Bruce Momjian <bruce@momjian.us>	Wed Feb 3 21:18:02 1999 +0000	1999
+af74855a608da4cd7ef88ceb2241ec1c75537f39	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 03:29:17 1998 +0000	1998
+6bd323c6b3f65b26273d5efb7ddd0ac04d039546	Bruce Momjian <bruce@momjian.us>	Mon Jun 15 19:30:31 1998 +0000	1998
+645146260eb982655572277d948ae5ae0ad4a31f	Bruce Momjian <bruce@momjian.us>	Mon Apr 6 02:38:26 1998 +0000	1998
+9a0dd4fb183958f59f68d8a5f096dd8df18d9b59	Bruce Momjian <bruce@momjian.us>	Mon Mar 30 16:47:35 1998 +0000	1998
+a32450a5855eed4bfd756ef292ee45d3c754665b	Bruce Momjian <bruce@momjian.us>	Thu Feb 26 04:46:47 1998 +0000	1998
+59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+\.
+
+
+--
+-- Data for Name: gitlog_geqo_px; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.gitlog_geqo_px (commit, author, date, year) FROM stdin;
+24d2b2680a8d0e01b30ce8a41c4eb3b47aca5031	Alvaro Herrera <alvherre@alvh.no-ip.org>	Wed Apr 13 19:14:20 2022 +0200	2022
+21d304dfedb4f26d0d6587d9ac39b1b5c499bb55	Tom Lane <tgl@sss.pgh.pa.us>	Mon Aug 14 17:29:33 2017 -0400	2017
+c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05 2017 -0400	2017
+9af4159fce6654aa0e081b00d02bca40b978745c	Bruce Momjian <bruce@momjian.us>	Wed May 29 16:58:43 2013 -0400	2013
+9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+6bd323c6b3f65b26273d5efb7ddd0ac04d039546	Bruce Momjian <bruce@momjian.us>	Mon Jun 15 19:30:31 1998 +0000	1998
+59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+\.
+
+
+--
+-- Data for Name: gitlog_geqo_random; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.gitlog_geqo_random (commit, author, date, year) FROM stdin;
+c8e1ba736b2b9e8c98d37a5b77c4ed31baf94147	Bruce Momjian <bruce@momjian.us>	Mon Jan 2 15:00:37 2023 -0500	2023
+27b77ecf9f4d5be211900eda54d8155ada50d696	Bruce Momjian <bruce@momjian.us>	Fri Jan 7 19:04:57 2022 -0500	2022
+3804539e48e794781c6145c7f988f5d507418fa8	Tom Lane <tgl@sss.pgh.pa.us>	Sun Nov 28 21:32:36 2021 -0500	2021
+ca3b37487be333a1d241dab1bbdd17a211a88f43	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:06:25 2021 -0500	2021
+7559d8ebfa11d98728e816f6b655582ce41150f3	Bruce Momjian <bruce@momjian.us>	Wed Jan 1 12:21:45 2020 -0500	2020
+97c39498e5ca9208d3de5a443a2282923619bf91	Bruce Momjian <bruce@momjian.us>	Wed Jan 2 12:44:25 2019 -0500	2019
+9d4649ca49416111aee2c84b7e4441a0b7aa2fac	Bruce Momjian <bruce@momjian.us>	Tue Jan 2 23:30:12 2018 -0500	2018
+1d25779284fe1ba08ecd57e647292a9deb241376	Bruce Momjian <bruce@momjian.us>	Tue Jan 3 13:48:53 2017 -0500	2017
+ee943004466418595363d567f18c053bae407792	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:33:40 2016 -0500	2016
+4baaf863eca5412e07a8441b3b7e7482b7a8b21a	Bruce Momjian <bruce@momjian.us>	Tue Jan 6 11:43:47 2015 -0500	2015
+7e04792a1cbd1763edf72474f6b1fbad2cd0ad31	Bruce Momjian <bruce@momjian.us>	Tue Jan 7 16:05:30 2014 -0500	2014
+bd61a623ace3f3db8da1c7936416706968ae6ec2	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 17:15:01 2013 -0500	2013
+e126958c2efdfc2d60b978d1fc7a780ff647e8ad	Bruce Momjian <bruce@momjian.us>	Sun Jan 1 18:01:58 2012 -0500	2012
+4af43ee3f165c8e4b332a7e680a44f4b7ba2d3c1	Robert Haas <rhaas@postgresql.org>	Wed Aug 3 16:26:40 2011 -0400	2011
+5d950e3b0c75d65dd09f8ca5f76cd429a0aabbdc	Bruce Momjian <bruce@momjian.us>	Sat Jan 1 13:18:15 2011 -0500	2011
+9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+65e806cba1f0f154d51caa7478e7192ce58d1056	Bruce Momjian <bruce@momjian.us>	Fri Feb 26 02:01:40 2010 +0000	2010
+0239800893ef4901e3c085e06534934a485d3bf0	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 16:58:17 2010 +0000	2010
+f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+\.
+
+
+--
+-- Data for Name: gitlog_geqo_recombination; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.gitlog_geqo_recombination (commit, author, date, year) FROM stdin;
+21d304dfedb4f26d0d6587d9ac39b1b5c499bb55	Tom Lane <tgl@sss.pgh.pa.us>	Mon Aug 14 17:29:33 2017 -0400	2017
+c7b8998ebbf310a156aa38022555a24d98fdbfb4	Tom Lane <tgl@sss.pgh.pa.us>	Wed Jun 21 15:18:54 2017 -0400	2017
+9db7d47f909482ac2b76c28f5e9a2ef48fb19b9d	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jun 4 13:34:05 2017 -0400	2017
+59464bd6f928ad0da30502cbe9b54baec9ca2c69	Tom Lane <tgl@sss.pgh.pa.us>	Thu Nov 5 10:46:14 2015 -0500	2015
+9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+400e2c934457bef4bc3cc9a3e49b6289bd761bc0	Tom Lane <tgl@sss.pgh.pa.us>	Sun Jul 19 21:00:43 2009 +0000	2009
+f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+1dc34982511d91ef8a2b71bdcb870f067c1b3da9	Bruce Momjian <bruce@momjian.us>	Sat Oct 15 02:49:52 2005 +0000	2005
+b6b71b85bc45b49005b5aec87cba2c33fc8baf49	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 05:07:03 2004 +0000	2004
+3969f2924bead7847adbe1fd736eefaf138af942	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jan 23 23:54:21 2004 +0000	2004
+55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+0cf1b79528aa98fa7e0acfd60371251bd691cf5a	Bruce Momjian <bruce@momjian.us>	Wed Jul 14 01:20:30 1999 +0000	1999
+6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+af74855a608da4cd7ef88ceb2241ec1c75537f39	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 03:29:17 1998 +0000	1998
+a32450a5855eed4bfd756ef292ee45d3c754665b	Bruce Momjian <bruce@momjian.us>	Thu Feb 26 04:46:47 1998 +0000	1998
+59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+\.
+
+
+--
+-- Data for Name: gitlog_geqo_selection; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.gitlog_geqo_selection (commit, author, date, year) FROM stdin;
+c8e1ba736b2b9e8c98d37a5b77c4ed31baf94147	Bruce Momjian <bruce@momjian.us>	Mon Jan 2 15:00:37 2023 -0500	2023
+a601366a460f68472bf70c4d94c57baa0a3ed1b2	Peter Geoghegan <pg@bowt.ie>	Tue Sep 20 13:09:30 2022 -0700	2022
+27b77ecf9f4d5be211900eda54d8155ada50d696	Bruce Momjian <bruce@momjian.us>	Fri Jan 7 19:04:57 2022 -0500	2022
+3804539e48e794781c6145c7f988f5d507418fa8	Tom Lane <tgl@sss.pgh.pa.us>	Sun Nov 28 21:32:36 2021 -0500	2021
+ca3b37487be333a1d241dab1bbdd17a211a88f43	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:06:25 2021 -0500	2021
+7559d8ebfa11d98728e816f6b655582ce41150f3	Bruce Momjian <bruce@momjian.us>	Wed Jan 1 12:21:45 2020 -0500	2020
+8548ddc61b5858b6466e69f66a6b1a7ea9daef06	Michael Paquier <michael@paquier.xyz>	Mon Aug 5 12:14:58 2019 +0900	2019
+97c39498e5ca9208d3de5a443a2282923619bf91	Bruce Momjian <bruce@momjian.us>	Wed Jan 2 12:44:25 2019 -0500	2019
+9d4649ca49416111aee2c84b7e4441a0b7aa2fac	Bruce Momjian <bruce@momjian.us>	Tue Jan 2 23:30:12 2018 -0500	2018
+1d25779284fe1ba08ecd57e647292a9deb241376	Bruce Momjian <bruce@momjian.us>	Tue Jan 3 13:48:53 2017 -0500	2017
+ee943004466418595363d567f18c053bae407792	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 13:33:40 2016 -0500	2016
+4baaf863eca5412e07a8441b3b7e7482b7a8b21a	Bruce Momjian <bruce@momjian.us>	Tue Jan 6 11:43:47 2015 -0500	2015
+7e04792a1cbd1763edf72474f6b1fbad2cd0ad31	Bruce Momjian <bruce@momjian.us>	Tue Jan 7 16:05:30 2014 -0500	2014
+bd61a623ace3f3db8da1c7936416706968ae6ec2	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 17:15:01 2013 -0500	2013
+927d61eeff78363ea3938c818d07e511ebaf75cf	Bruce Momjian <bruce@momjian.us>	Sun Jun 10 15:20:04 2012 -0400	2012
+e126958c2efdfc2d60b978d1fc7a780ff647e8ad	Bruce Momjian <bruce@momjian.us>	Sun Jan 1 18:01:58 2012 -0500	2012
+4af43ee3f165c8e4b332a7e680a44f4b7ba2d3c1	Robert Haas <rhaas@postgresql.org>	Wed Aug 3 16:26:40 2011 -0400	2011
+5d950e3b0c75d65dd09f8ca5f76cd429a0aabbdc	Bruce Momjian <bruce@momjian.us>	Sat Jan 1 13:18:15 2011 -0500	2011
+9f2e211386931f7aee48ffbc2fcaef1632d8329f	Magnus Hagander <magnus@hagander.net>	Mon Sep 20 22:08:53 2010 +0200	2010
+0239800893ef4901e3c085e06534934a485d3bf0	Bruce Momjian <bruce@momjian.us>	Sat Jan 2 16:58:17 2010 +0000	2010
+655473a7cd3903d2ce75054468c855d5c294aaf9	Tom Lane <tgl@sss.pgh.pa.us>	Fri Jul 24 15:03:07 2009 +0000	2009
+f5bc74192d2ffb32952a06c62b3458d28ff7f98f	Tom Lane <tgl@sss.pgh.pa.us>	Thu Jul 16 20:55:44 2009 +0000	2009
+511db38ace2690f19816465baed07cefe535bfec	Bruce Momjian <bruce@momjian.us>	Thu Jan 1 17:24:05 2009 +0000	2009
+9098ab9e327c2e6b0fece9e550d7d93663c60ff5	Bruce Momjian <bruce@momjian.us>	Tue Jan 1 19:46:01 2008 +0000	2008
+29dccf5fe0e98af9ce023299c4fe9776a52fd23d	Bruce Momjian <bruce@momjian.us>	Fri Jan 5 22:20:05 2007 +0000	2007
+f2f5b05655afa80377757a2c335c01b28de24429	Bruce Momjian <bruce@momjian.us>	Sun Mar 5 15:59:11 2006 +0000	2006
+1dc34982511d91ef8a2b71bdcb870f067c1b3da9	Bruce Momjian <bruce@momjian.us>	Sat Oct 15 02:49:52 2005 +0000	2005
+1265724ff5abb1dcf468cb33153ae1326426d7a6	Tom Lane <tgl@sss.pgh.pa.us>	Tue Jun 14 14:21:16 2005 +0000	2005
+2ff501590b323bde14f7e662fd89ad12a4d2f4e0	PostgreSQL Daemon <webmaster@postgresql.org>	Fri Dec 31 22:04:05 2004 +0000	2004
+da9a8649d810826daf7868c6be9a4086c835c0ee	Bruce Momjian <bruce@momjian.us>	Sun Aug 29 04:13:13 2004 +0000	2004
+55b113257c883722bef8a4dd145c6a0c3fde687f	PostgreSQL Daemon <webmaster@postgresql.org>	Sat Nov 29 22:41:33 2003 +0000	2003
+f3c3deb7d003cad114696b0bf5e01b04bb5b8fd0	Bruce Momjian <bruce@momjian.us>	Mon Aug 4 02:40:20 2003 +0000	2003
+52c9d259335c9670f6487c5f40fc53b57a4c7b17	Tom Lane <tgl@sss.pgh.pa.us>	Thu Sep 5 00:43:07 2002 +0000	2002
+d84fe82230c593f3dc5d7f427849b99d1efa8a0a	Bruce Momjian <bruce@momjian.us>	Thu Jun 20 20:29:54 2002 +0000	2002
+623bf843d201438db1590906b4c39faf9d2e1c2a	Bruce Momjian <bruce@momjian.us>	Wed Jan 24 19:43:33 2001 +0000	2001
+5c25d60244d3a4b458ba55d4f1e50386edb26507	Bruce Momjian <bruce@momjian.us>	Wed Jan 26 05:58:53 2000 +0000	2000
+a71802e12ec04fed791ea47f24ea30e0f5d9f5c2	Bruce Momjian <bruce@momjian.us>	Fri Jul 16 05:00:38 1999 +0000	1999
+2e6b1e63a3f4990594af94afe1b3cef90ae752b5	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 22:40:16 1999 +0000	1999
+4b2c2850bf243cfa4a7b4cbd2e60ba1791c098fb	Bruce Momjian <bruce@momjian.us>	Thu Jul 15 15:21:54 1999 +0000	1999
+6724a5078748946b8150700125571b6ea62feca8	Bruce Momjian <bruce@momjian.us>	Sat Feb 13 23:22:53 1999 +0000	1999
+9322950aa44ef3647ccdd043cffe92cead171587	Bruce Momjian <bruce@momjian.us>	Wed Feb 3 21:18:02 1999 +0000	1999
+af74855a608da4cd7ef88ceb2241ec1c75537f39	Bruce Momjian <bruce@momjian.us>	Tue Sep 1 03:29:17 1998 +0000	1998
+59f6a57e59fe8353f9edaa3703516ea67e06672b	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 21:56:23 1997 +0000	1997
+319dbfa7364721d3343af03a7ce063c2a2c9d385	Bruce Momjian <bruce@momjian.us>	Mon Sep 8 02:41:22 1997 +0000	1997
+1ccd423235a48739d6f7a4d7889705b5f9ecc69b	Bruce Momjian <bruce@momjian.us>	Sun Sep 7 05:04:48 1997 +0000	1997
+29138eeb3ca299d0fdc3d4ea2cbe523b759c9db0	Marc G. Fournier <scrappy@hub.org>	Wed Feb 19 12:59:07 1997 +0000	1997
+\.
+
+
+--
+-- PostgreSQL database dump complete
+--
+
